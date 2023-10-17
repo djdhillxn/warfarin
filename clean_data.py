@@ -110,6 +110,31 @@ print('df.shape',df.shape)
 dashed_line()
 
 
+
+
+print('''
+# Step 6: filling Carbamazepine, Phenytoin, Rifampin null values with 0
+''')
+
+print("df['Carbamazepine (Tegretol)'].isnull().sum()",df['Carbamazepine (Tegretol)'].isnull().sum())
+print("df['Phenytoin (Dilantin)'].isnull().sum()",df['Phenytoin (Dilantin)'].isnull().sum())
+print("df['Rifampin or Rifampicin'].isnull().sum()",df['Rifampin or Rifampicin'].isnull().sum())
+df['Carbamazepine (Tegretol)'].fillna(0, inplace=True)
+df['Phenytoin (Dilantin)'].fillna(0, inplace=True)
+df['Rifampin or Rifampicin'].fillna(0, inplace=True)
+df['Carbamazepine (Tegretol)'] = df['Carbamazepine (Tegretol)'].map({1.0: True, 0.0: False})
+df['Phenytoin (Dilantin)'] = df['Phenytoin (Dilantin)'].map({1.0: True, 0.0:False})
+df['Rifampin or Rifampicin'] = df['Rifampin or Rifampicin'].map({1.0: True, 0.0:False})
+df['Enzyme inducer status'] = df["Carbamazepine (Tegretol)"] | df["Phenytoin (Dilantin)"] | df["Rifampin or Rifampicin"]
+df['Enzyme inducer status'] = df['Enzyme inducer status'].map({True: 1.0, False: 0.0})
+print("df['Carbamazepine (Tegretol)'].isnull().sum()",df['Carbamazepine (Tegretol)'].isnull().sum())
+print("df['Phenytoin (Dilantin)'].isnull().sum()",df['Phenytoin (Dilantin)'].isnull().sum())
+print("df['Rifampin or Rifampicin'].isnull().sum()",df['Rifampin or Rifampicin'].isnull().sum())
+
+
+
+dashed_line()
+
 dataframe_info(df)
 
 dashed_line()
