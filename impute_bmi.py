@@ -48,8 +48,6 @@ data_path = './data/cleaned_warfarin.csv'
 # Reload the CSV file into a DataFrame
 df = pd.read_csv(data_path)
 
-
-
 dashed_line()
 
 print('df.shape before preprocessing:',df.shape)
@@ -57,6 +55,56 @@ print('df.shape before preprocessing:',df.shape)
 dashed_line()
 
 
-dataframe_info(df)
+from sklearn.impute import KNNImputer
+from sklearn.preprocessing import StandardScaler
+
+missing_values_before_imputation = df[['Height (cm)', 'Weight (kg)']].isnull().sum()
+
+print("missing_values_before_imputation:")
+print(missing_values_before_imputation)
 
 dashed_line()
+
+# Select columns for imputation
+data_to_impute = df[['Height (cm)', 'Weight (kg)']]
+
+# Scale the data
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(data_to_impute)
+
+# Impute missing values using KNN
+imputer = KNNImputer(n_neighbors=5)
+imputed_data = imputer.fit_transform(scaled_data)
+
+# Inverse transform to original scale
+imputed_data_original_scale = scaler.inverse_transform(imputed_data)
+
+# Update the original dataframe with imputed values
+df['Height (cm)'] = imputed_data_original_scale[:, 0]
+df['Weight (kg)'] = imputed_data_original_scale[:, 1]
+
+# Check if there are any missing values left after imputation
+missing_values_after_imputation = df[['Height (cm)', 'Weight (kg)']].isnull().sum()
+
+print("missing_values_after_imputation:")
+print(missing_values_after_imputation)
+
+dashed_line()
+
+print('df.shape after preprocessing:',df.shape)
+
+dashed_line()
+
+df.to_csv('./data/warfarinx.csv')
+print('saved imputed dataset warfarinx.csv')
+
+#dataframe_info(df)
+
+dashed_line()
+
+
+
+
+
+
+
