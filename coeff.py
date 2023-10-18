@@ -110,21 +110,28 @@ df['Fixed Dose'] =  35
 df['Fixed Dose'] = pd.cut(df['Fixed Dose'], bins)
 
 
+
 df['Fixed Correct'] = df['Fixed Dose'] == df["Therapeutic Dose of Warfarin"]
+accuracy_fixed = df['Fixed Correct'].sum() / len(df['Fixed Correct'])
 print("df['Fixed Correct'].value_counts()")
-df['Fixed Correct'].value_counts()
+print(df['Fixed Correct'].value_counts())
+print("Fixed Accuracy:",accuracy_fixed)
 
 dashed_line()
 
 df['Clinical Correct'] = df['Clinical Dose'] == df["Therapeutic Dose of Warfarin"]
+accuracy_clinical = df['Clinical Correct'].sum() / len(df['Clinical Correct'])
 print("df['Clinical Correct'].value_counts()")
-df['Clinical Correct'].value_counts()
+print(df['Clinical Correct'].value_counts())
+print("Clinical Accuracy:",accuracy_clinical)
 
 dashed_line()
 
 df['Pharmacogenetic Correct'] = df['Pharmacogenetic Dose'] == df["Therapeutic Dose of Warfarin"]
+accuracy_pharmacogenetic = df['Pharmacogenetic Correct'].sum() / len(df['Pharmacogenetic Correct'])
 print("df['Pharmacogenetic Correct'].value_counts()")
-df['Pharmacogenetic Correct'].value_counts()
+print(df['Pharmacogenetic Correct'].value_counts())
+print("Pharmacogenetic Accuracy:",accuracy_pharmacogenetic)
 
 
 dashed_line()
