@@ -95,7 +95,7 @@ print('df.shape after preprocessing:',df.shape)
 
 dashed_line()
 
-df.to_csv('./data/warfarinx.csv')
+df.to_csv('./data/warfarinx.csv',index=False)
 print('saved imputed dataset warfarinx.csv')
 
 #dataframe_info(df)

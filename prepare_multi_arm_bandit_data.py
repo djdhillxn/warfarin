@@ -44,7 +44,7 @@ def sorted_info(df):
 
 # Assuming `df` is your DataFrame
 #dataframe_info(df)
-data_path = './data/warfarin.csv'
+data_path = './data/warfarin_with_baselines.csv'
 #metadata_path = "/content/drive/MyDrive/warfarin/metadata.xls"
 # Reload the CSV file into a DataFrame
 df = pd.read_csv(data_path)
@@ -221,6 +221,6 @@ dataframe_info(df)
 
 dashed_line()
 
-df.to_csv('./data/cleaned_warfarin.csv', index=False)
+df.to_csv('./data/cleaned_warfarin.csv')
 
 print('cleaned dataset successfully saved')
