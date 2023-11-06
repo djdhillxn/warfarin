@@ -33,10 +33,10 @@ Clinical Accuracy: 0.6407380607814761
 
 df['Pharmacogenetic Correct'].value_counts()
 Pharmacogenetic Correct
-True     3574
-False    1954
+True     3814
+False    1714
 Name: count, dtype: int64
-Pharmacogenetic Accuracy: 0.6465267727930536
+Pharmacogenetic Accuracy: 0.6899421128798843
 
 
 --------------------------------------------------------------------------------------

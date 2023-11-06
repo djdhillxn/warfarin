@@ -66,7 +66,7 @@ df['Race_coefficient_clinical'] = df['Race'].apply(
                0.0443 if x == 'Unknown' else 0
 )
 df['Race_coefficient_pharma'] = df['Race'].apply(
-    lambda x: -1.0920 if x == 'Asian' else
+    lambda x: -0.1092 if x == 'Asian' else
               -0.2760 if x == 'Black or African American' else
               -0.1032 if x == 'Unknown' else 0
 )
