@@ -1,0 +1,50 @@
+
+
+--------------------------------------------------------------------------------------
+
+
+df.shape before preprocessing: (5528, 66)
+
+
+--------------------------------------------------------------------------------------
+
+
+df['Fixed Correct'].value_counts()
+Fixed Correct
+True     3382
+False    2146
+Name: count, dtype: int64
+Fixed Accuracy: 0.611794500723589
+
+
+--------------------------------------------------------------------------------------
+
+
+df['Clinical Correct'].value_counts()
+Clinical Correct
+True     3542
+False    1986
+Name: count, dtype: int64
+Clinical Accuracy: 0.6407380607814761
+
+
+--------------------------------------------------------------------------------------
+
+
+df['Pharmacogenetic Correct'].value_counts()
+Pharmacogenetic Correct
+True     3574
+False    1954
+Name: count, dtype: int64
+Pharmacogenetic Accuracy: 0.6465267727930536
+
+
+--------------------------------------------------------------------------------------
+
+
+saved modified dataset warfarin_with_baselines.csv
+
+
+--------------------------------------------------------------------------------------
+
+

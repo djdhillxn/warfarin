@@ -135,3 +135,9 @@ print("Pharmacogenetic Accuracy:",accuracy_pharmacogenetic)
 
 
 dashed_line()
+
+df.to_csv('./data/warfarin_with_baselines.csv')
+print('saved modified dataset warfarin_with_baselines.csv')
+
+dashed_line()
+
