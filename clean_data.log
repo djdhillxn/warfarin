@@ -1,0 +1,788 @@
+
+
+--------------------------------------------------------------------------------------
+
+
+df.shape before preprocessing: (5701, 66)
+
+
+--------------------------------------------------------------------------------------
+
+
+# Step 1: Drop rows where 'Therapeutic Dose of Warfarin' is null
+df.shape: (5701, 66)
+null value counts for warfarin dosage: 173
+null value counts for dose after dropping: 0
+df.shape after dropping: (5528, 66)
+
+
+--------------------------------------------------------------------------------------
+
+
+# Step 2: Drop the unnamed columns
+df.shape: (5528, 66)
+dropping empty columns...
+df.shape after dropping: (5528, 63)
+
+
+--------------------------------------------------------------------------------------
+
+
+# Step 3: Replace null values in 'Gender'
+Gender
+male      3220
+female    2304
+Name: count, dtype: int64
+null values counts for gender: 4
+imputing null value counts with mode:  male
+null value counts for gender after imputation: 0
+Gender
+male      3224
+female    2304
+Name: count, dtype: int64
+
+
+--------------------------------------------------------------------------------------
+
+
+# Step 4: Impute missing 'Age' values with the mode
+Age
+70 - 79    1528
+60 - 69    1343
+50 - 59    1056
+80 - 89     650
+40 - 49     530
+30 - 39     216
+20 - 29     119
+90+          33
+10 - 19      14
+Name: count, dtype: int64
+null value counts for age: 39
+imputing the null value counts with mode age value: 70 - 79
+null value counts for age after imputation: 0
+Age
+70 - 79    1567
+60 - 69    1343
+50 - 59    1056
+80 - 89     650
+40 - 49     530
+30 - 39     216
+20 - 29     119
+90+          33
+10 - 19      14
+Name: count, dtype: int64
+
+
+--------------------------------------------------------------------------------------
+
+
+
+# Step 5: Replace all NaN values in 'Amiodarone (Cordarone)' with 0, effectively implementing the assumption
+# "When amiodarone use was unknown, it was assumed that it was not used."
+
+Amiodarone (Cordarone)
+0.0    3762
+1.0     263
+Name: count, dtype: int64
+null value counts before imputation 1503
+null value counts after imputation 0
+Amiodarone (Cordarone)
+0.0    5265
+1.0     263
+Name: count, dtype: int64
+
+
+--------------------------------------------------------------------------------------
+
+
+
+# Step 6: filling Carbamazepine, Phenytoin, Rifampin null values with 0
+
+df['Carbamazepine (Tegretol)'].isnull().sum() 3098
+df['Phenytoin (Dilantin)'].isnull().sum() 3104
+df['Rifampin or Rifampicin'].isnull().sum() 3105
+df['Carbamazepine (Tegretol)'].isnull().sum() 0
+df['Phenytoin (Dilantin)'].isnull().sum() 0
+df['Rifampin or Rifampicin'].isnull().sum() 0
+
+
+--------------------------------------------------------------------------------------
+
+
+
+# Step 7: Filling null values in 'Cyp2C9 genotypes' and 'CYP2C9 consensus' with 'Unknown'
+
+df['Cyp2C9 genotypes'].isnull().sum() before imputation 109
+df['CYP2C9 consensus'].isnull().sum() before imputation 121
+df['Cyp2C9 genotypes'].isnull().sum() after imputation 0
+df['CYP2C9 consensus'].isnull().sum() after imputation 0
+
+
+--------------------------------------------------------------------------------------
+
+
+
+# Step 8: Imputing missing values for column "VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T"
+
+# Check for the current state of the "VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T" column
+unique_entries before imputing: ['A/G' 'A/A' 'G/G' nan]
+num null values before imputing: 1633
+value counts before imputing: VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T
+A/A    1443
+A/G    1353
+G/G    1099
+Name: count, dtype: int64
+# Filling null values that can't be imputed in 'VKORC1 genotype' with 'Unknown'
+unique_entries after imputing: ['A/G' 'A/A' 'G/G' 'Unknown']
+value counts after imputing: VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T
+A/G        1994
+A/A        1760
+G/G        1666
+Unknown     108
+Name: count, dtype: int64
+num null values after imputing: 0
+
+
+--------------------------------------------------------------------------------------
+
+
+df.shape (5528, 64)
+
+
+--------------------------------------------------------------------------------------
+
+
+<class 'pandas.core.frame.DataFrame'>
+Shape: (5528, 64)
+Columns:
+PharmGKB Subject ID: 5528 non-null object
+Amiodarone (Cordarone): 5528 non-null float64
+CYP2C9 consensus: 5528 non-null object
+VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T: 5528 non-null object
+Cyp2C9 genotypes: 5528 non-null object
+Therapeutic Dose of Warfarin: 5528 non-null float64
+Subject Reached Stable Dose of Warfarin: 5528 non-null float64
+Gender: 5528 non-null object
+Rifampin or Rifampicin: 5528 non-null bool
+Phenytoin (Dilantin): 5528 non-null bool
+Carbamazepine (Tegretol): 5528 non-null bool
+Enzyme inducer status: 5528 non-null float64
+Race: 5528 non-null object
+Ethnicity: 5528 non-null object
+Age: 5528 non-null int64
+Weight (kg): 5256 non-null float64
+INR on Reported Therapeutic Dose of Warfarin: 4968 non-null float64
+Indication for Warfarin Treatment: 4831 non-null object
+Height (cm): 4447 non-null float64
+Medications: 4247 non-null object
+VKORC1 -1639 consensus: 4047 non-null object
+Congestive Heart Failure and/or Cardiomyopathy: 3855 non-null float64
+Valve Replacement: 3801 non-null float64
+Simvastatin (Zocor): 3753 non-null float64
+Aspirin: 3732 non-null float64
+Estimated Target INR Range Based on Indication: 3646 non-null object
+Comorbidities: 3588 non-null object
+VKORC1 1173 consensus: 3515 non-null object
+VKORC1 1542 consensus: 3446 non-null object
+VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G: 3303 non-null object
+VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G: 3270 non-null object
+VKORC1 3730 consensus: 3212 non-null object
+Diabetes: 3126 non-null float64
+Current Smoker: 3063 non-null float64
+VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G: 3001 non-null object
+Atorvastatin (Lipitor): 2455 non-null float64
+Pravastatin (Pravachol): 2433 non-null float64
+Lovastatin (Mevacor): 2431 non-null float64
+Anti-fungal Azoles: 2426 non-null float64
+Rosuvastatin (Crestor): 2424 non-null float64
+Macrolide Antibiotics: 2423 non-null float64
+Fluvastatin (Lescol): 2423 non-null float64
+Sulfonamide Antibiotics: 2422 non-null float64
+VKORC1 2255 consensus: 2367 non-null object
+Acetaminophen or Paracetamol (Tylenol): 2225 non-null float64
+Cerivastatin (Baycol): 2136 non-null float64
+VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G: 2054 non-null object
+Herbal Medications, Vitamins, Supplements: 1908 non-null float64
+VKORC1 497 consensus: 1859 non-null object
+VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C: 1599 non-null object
+Target INR: 1259 non-null float64
+Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day: 1159 non-null float64
+VKORC1 -4451 consensus: 889 non-null object
+VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C: 540 non-null object
+VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G: 454 non-null object
+VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G: 454 non-null object
+VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G: 454 non-null object
+VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G: 454 non-null object
+VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C: 454 non-null object
+VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T: 454 non-null object
+Combined QC CYP2C9: 454 non-null object
+Genotyped QC Cyp2C9*3: 454 non-null object
+Genotyped QC Cyp2C9*2: 454 non-null object
+VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C: 428 non-null object
+
+
+--------------------------------------------------------------------------------------
+
+
+General Information:
+--------------------
+<class 'pandas.core.frame.DataFrame'>
+Index: 5528 entries, 0 to 5699
+Data columns (total 64 columns):
+ #   Column                                                                Non-Null Count  Dtype  
+---  ------                                                                --------------  -----  
+ 0   PharmGKB Subject ID                                                   5528 non-null   object 
+ 1   Gender                                                                5528 non-null   object 
+ 2   Race                                                                  5528 non-null   object 
+ 3   Ethnicity                                                             5528 non-null   object 
+ 4   Age                                                                   5528 non-null   int64  
+ 5   Height (cm)                                                           4447 non-null   float64
+ 6   Weight (kg)                                                           5256 non-null   float64
+ 7   Indication for Warfarin Treatment                                     4831 non-null   object 
+ 8   Comorbidities                                                         3588 non-null   object 
+ 9   Diabetes                                                              3126 non-null   float64
+ 10  Congestive Heart Failure and/or Cardiomyopathy                        3855 non-null   float64
+ 11  Valve Replacement                                                     3801 non-null   float64
+ 12  Medications                                                           4247 non-null   object 
+ 13  Aspirin                                                               3732 non-null   float64
+ 14  Acetaminophen or Paracetamol (Tylenol)                                2225 non-null   float64
+ 15  Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day        1159 non-null   float64
+ 16  Simvastatin (Zocor)                                                   3753 non-null   float64
+ 17  Atorvastatin (Lipitor)                                                2455 non-null   float64
+ 18  Fluvastatin (Lescol)                                                  2423 non-null   float64
+ 19  Lovastatin (Mevacor)                                                  2431 non-null   float64
+ 20  Pravastatin (Pravachol)                                               2433 non-null   float64
+ 21  Rosuvastatin (Crestor)                                                2424 non-null   float64
+ 22  Cerivastatin (Baycol)                                                 2136 non-null   float64
+ 23  Amiodarone (Cordarone)                                                5528 non-null   float64
+ 24  Carbamazepine (Tegretol)                                              5528 non-null   bool   
+ 25  Phenytoin (Dilantin)                                                  5528 non-null   bool   
+ 26  Rifampin or Rifampicin                                                5528 non-null   bool   
+ 27  Sulfonamide Antibiotics                                               2422 non-null   float64
+ 28  Macrolide Antibiotics                                                 2423 non-null   float64
+ 29  Anti-fungal Azoles                                                    2426 non-null   float64
+ 30  Herbal Medications, Vitamins, Supplements                             1908 non-null   float64
+ 31  Target INR                                                            1259 non-null   float64
+ 32  Estimated Target INR Range Based on Indication                        3646 non-null   object 
+ 33  Subject Reached Stable Dose of Warfarin                               5528 non-null   float64
+ 34  Therapeutic Dose of Warfarin                                          5528 non-null   float64
+ 35  INR on Reported Therapeutic Dose of Warfarin                          4968 non-null   float64
+ 36  Current Smoker                                                        3063 non-null   float64
+ 37  Cyp2C9 genotypes                                                      5528 non-null   object 
+ 38  Genotyped QC Cyp2C9*2                                                 454 non-null    object 
+ 39  Genotyped QC Cyp2C9*3                                                 454 non-null    object 
+ 40  Combined QC CYP2C9                                                    454 non-null    object 
+ 41  VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T     5528 non-null   object 
+ 42  VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T  454 non-null    object 
+ 43  VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C        1599 non-null   object 
+ 44  VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C     454 non-null    object 
+ 45  VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G       3303 non-null   object 
+ 46  VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G    454 non-null    object 
+ 47  VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G       3270 non-null   object 
+ 48  VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G    454 non-null    object 
+ 49  VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G        3001 non-null   object 
+ 50  VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G     454 non-null    object 
+ 51  VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G       2054 non-null   object 
+ 52  VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G    454 non-null    object 
+ 53  VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C     540 non-null    object 
+ 54  VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C  428 non-null    object 
+ 55  CYP2C9 consensus                                                      5528 non-null   object 
+ 56  VKORC1 -1639 consensus                                                4047 non-null   object 
+ 57  VKORC1 497 consensus                                                  1859 non-null   object 
+ 58  VKORC1 1173 consensus                                                 3515 non-null   object 
+ 59  VKORC1 1542 consensus                                                 3446 non-null   object 
+ 60  VKORC1 3730 consensus                                                 3212 non-null   object 
+ 61  VKORC1 2255 consensus                                                 2367 non-null   object 
+ 62  VKORC1 -4451 consensus                                                889 non-null    object 
+ 63  Enzyme inducer status                                                 5528 non-null   float64
+dtypes: bool(3), float64(26), int64(1), object(34)
+memory usage: 2.6+ MB
+
+
+Descriptive Statistics:
+-----------------------
+               Age  Height (cm)  ...  Current Smoker  Enzyme inducer status
+count  5528.000000  4447.000000  ...     3063.000000            5528.000000
+mean      5.937771   168.062035  ...        0.136141               0.009768
+std       1.462182    10.839539  ...        0.342994               0.098360
+min       1.000000   124.970000  ...        0.000000               0.000000
+25%       5.000000   160.020000  ...        0.000000               0.000000
+50%       6.000000   167.890000  ...        0.000000               0.000000
+75%       7.000000   176.020000  ...        0.000000               0.000000
+max       9.000000   202.000000  ...        1.000000               1.000000
+
+[8 rows x 27 columns]
+
+
+Value Counts for PharmGKB Subject ID:
+-----------------------
+PharmGKB Subject ID
+PA135312261    1
+PA152211180    1
+PA152211188    1
+PA152211187    1
+PA152211186    1
+              ..
+PA151540318    1
+PA151540317    1
+PA151540316    1
+PA151540315    1
+PA152407685    1
+Name: count, Length: 5528, dtype: int64
+null value counts: 0
+
+
+Value Counts for Gender:
+-----------------------
+Gender
+male      3224
+female    2304
+Name: count, dtype: int64
+null value counts: 0
+
+
+Value Counts for Race:
+-----------------------
+Race
+White                        2969
+Asian                        1619
+Unknown                       478
+Black or African American     462
+Name: count, dtype: int64
+null value counts: 0
+
+
+Value Counts for Ethnicity:
+-----------------------
+Ethnicity
+not Hispanic or Latino    4461
+Unknown                   1023
+Hispanic or Latino          44
+Name: count, dtype: int64
+null value counts: 0
+
+
+Value Counts for Indication for Warfarin Treatment:
+-----------------------
+Indication for Warfarin Treatment
+3                1704
+4                 908
+8                 603
+1                 307
+2                 256
+3; 8              250
+6                 122
+7                 109
+5                  88
+1 or 2             87
+1; 2               74
+3; 4               64
+4; 8               61
+3; 6               39
+3; 4; 8            23
+3; 5               18
+3; 6; 8            15
+6; 8               14
+7; 8               10
+1; 3                7
+5; 8                6
+1; 8                6
+2; 8                5
+4; 6                5
+3; 4; 6             4
+5; 6                3
+1; 3; 8             3
+4; 6; 8             3
+1; 2; 8             3
+4; 7                3
+1; 2; 3             2
+1; 6                2
+4; 5                2
+2; 3                2
+3; 4; 6; 8          2
+4; 3                2
+3; 4; 7             2
+3; 7                2
+3; 4; 7; 8          2
+1; 2; 5; 8          1
+3; 2                1
+6; 5                1
+1; 3; 4; 8          1
+1,2                 1
+4; 7; 8             1
+4;6                 1
+1;2                 1
+3; 7; 8             1
+3; 6; 7             1
+2; 3; 8             1
+3; 4; 6; 7; 8       1
+2; 6                1
+Name: count, dtype: int64
+null value counts: 697
+
+
+Value Counts for Comorbidities:
+-----------------------
+Comorbidities
+No comorbidities                                                                                                                                                                                                                                    280
+heart valve replacement                                                                                                                                                                                                                             237
+Atrial Fibrillation/Flutter                                                                                                                                                                                                                         157
+No Cardiomyopathy; No Diabetes; No Hyperlipidemia; No Hypertension                                                                                                                                                                                  109
+heart valve prosthesis                                                                                                                                                                                                                               95
+                                                                                                                                                                                                                                                   ... 
+atrial fibrillation; coronary artery disease; myocardial infarction; coronary artery bypass graft; percutanerous transluminal coronary angioplasty; hypertension; cardiac arrhythmia; thyroid disease; skin cancer                                    1
+atrial fibrillation; coronary artery disease; myocardial infarction; coronary artery bypass graft; percutanerous transluminal coronary angioplasty; hyperlipidemia; cardiac arrhythmia; diabetes mellitus                                             1
+atrial fibrillation; coronary artery disease; coronary artery bypass graft; percutanerous transluminal coronary angioplasty; hypertension; hyperlipidemia; cardiac arrhythmia; diabetes mellitus; renal disease; depression; anxiety; transplant      1
+atrial fibrillation; coronary artery disease; coronary artery bypass graft; percutanerous transluminal coronary angioplasty; cardiac arrhythmia                                                                                                       1
+hypertension; high cholesterol; cancer                                                                                                                                                                                                                1
+Name: count, Length: 1523, dtype: int64
+null value counts: 1940
+
+
+Value Counts for Medications:
+-----------------------
+Medications
+none                                                                                                                                   426
+not aspirin; not simvastatin; not amiodarone                                                                                           303
+No interacting medications                                                                                                             280
+not cordarone; not pacerone; not amiodarone; not celebrex; not vioxx; not bextra                                                       176
+no aspirin; no simvastatin; no amiodarone                                                                                              131
+                                                                                                                                      ... 
+Allopurinol; Aspirin; Atorvastatin Calcium;  Hydrochlorothiazide; Levothyroxine sodium; Pantoprazole Sodium; Tamsulosin HCl              1
+Acetaminophen/DP-Hydram HCl; Diltiazem HCl; Furosemide; Gabapentin; Multivitamin; Propoxyphene/Acetaminophen; vitamins                   1
+Atorvastatin Calcium;  Captopril; Furosemide; Isosorbide Mononitrate; Metoprolol Tartrate; Nitroglycerin; Potassium; Spironolactone      1
+Timolol Maleate;  Trandolapril                                                                                                           1
+Aspirin and/or palvix and/or  dipyridamole; substrate2c9                                                                                 1
+Name: count, Length: 2005, dtype: int64
+null value counts: 1281
+
+
+Value Counts for Carbamazepine (Tegretol):
+-----------------------
+Carbamazepine (Tegretol)
+False    5501
+True       27
+Name: count, dtype: int64
+null value counts: 0
+
+
+Value Counts for Phenytoin (Dilantin):
+-----------------------
+Phenytoin (Dilantin)
+False    5504
+True       24
+Name: count, dtype: int64
+null value counts: 0
+
+
+Value Counts for Rifampin or Rifampicin:
+-----------------------
+Rifampin or Rifampicin
+False    5524
+True        4
+Name: count, dtype: int64
+null value counts: 0
+
+
+Value Counts for Estimated Target INR Range Based on Indication:
+-----------------------
+Estimated Target INR Range Based on Indication
+2-3        2492
+2-3.5       436
+1.7-2.8     263
+1.7-3.3     250
+2.5-3.5     203
+3.0-4.0       1
+3-4           1
+Name: count, dtype: int64
+null value counts: 1882
+
+
+Value Counts for Cyp2C9 genotypes:
+-----------------------
+Cyp2C9 genotypes
+*1/*1      4066
+*1/*2       712
+*1/*3       480
+Unknown     109
+*2/*3        68
+*2/*2        56
+*3/*3        20
+*1/*5         6
+*1/*11        6
+*1/*6         3
+*1/*13        1
+*1/*14        1
+Name: count, dtype: int64
+null value counts: 0
+
+
+Value Counts for Genotyped QC Cyp2C9*2:
+-----------------------
+Genotyped QC Cyp2C9*2
+*1/*1    393
+*1/*2     56
+*2/*2      5
+Name: count, dtype: int64
+null value counts: 5074
+
+
+Value Counts for Genotyped QC Cyp2C9*3:
+-----------------------
+Genotyped QC Cyp2C9*3
+*1/*1    411
+*1/*3     40
+*3/*3      3
+Name: count, dtype: int64
+null value counts: 5074
+
+
+Value Counts for Combined QC CYP2C9:
+-----------------------
+Combined QC CYP2C9
+*1/*1    353
+*1/*2     53
+*1/*3     37
+*2/*2      5
+*2/*3      3
+*3/*3      3
+Name: count, dtype: int64
+null value counts: 5074
+
+
+Value Counts for VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T:
+-----------------------
+VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T
+A/G        1994
+A/A        1760
+G/G        1666
+Unknown     108
+Name: count, dtype: int64
+null value counts: 0
+
+
+Value Counts for VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T:
+-----------------------
+VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T
+G/G    195
+A/G    153
+A/A    106
+Name: count, dtype: int64
+null value counts: 5074
+
+
+Value Counts for VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C:
+-----------------------
+VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C
+T/T    1074
+G/T     455
+G/G      70
+Name: count, dtype: int64
+null value counts: 3929
+
+
+Value Counts for VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C:
+-----------------------
+VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C
+T/T    314
+G/T    123
+G/G     17
+Name: count, dtype: int64
+null value counts: 5074
+
+
+Value Counts for VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G:
+-----------------------
+VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G
+T/T    1497
+C/T     950
+C/C     856
+Name: count, dtype: int64
+null value counts: 2225
+
+
+Value Counts for VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G:
+-----------------------
+VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G
+C/C    195
+C/T    153
+T/T    106
+Name: count, dtype: int64
+null value counts: 5074
+
+
+Value Counts for VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G:
+-----------------------
+VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G
+C/C    1296
+C/G    1144
+G/G     830
+Name: count, dtype: int64
+null value counts: 2258
+
+
+Value Counts for VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G:
+-----------------------
+VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G
+C/G    181
+G/G    158
+C/C    115
+Name: count, dtype: int64
+null value counts: 5074
+
+
+Value Counts for VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G:
+-----------------------
+VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G
+G/G    1774
+A/G     964
+A/A     263
+Name: count, dtype: int64
+null value counts: 2527
+
+
+Value Counts for VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G:
+-----------------------
+VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G
+G/G    207
+A/G    187
+A/A     60
+Name: count, dtype: int64
+null value counts: 5074
+
+
+Value Counts for VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G:
+-----------------------
+VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G
+T/T    1141
+C/T     574
+C/C     339
+Name: count, dtype: int64
+null value counts: 3474
+
+
+Value Counts for VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G:
+-----------------------
+VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G
+C/C    175
+C/T    167
+T/T    112
+Name: count, dtype: int64
+null value counts: 5074
+
+
+Value Counts for VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C:
+-----------------------
+VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C
+C/C    331
+A/C    152
+A/A     57
+Name: count, dtype: int64
+null value counts: 4988
+
+
+Value Counts for VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C:
+-----------------------
+VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C
+C/C    262
+A/C    135
+A/A     31
+Name: count, dtype: int64
+null value counts: 5100
+
+
+Value Counts for CYP2C9 consensus:
+-----------------------
+CYP2C9 consensus
+*1/*1      4067
+*1/*2       707
+*1/*3       477
+Unknown     121
+*2/*3        65
+*2/*2        54
+*3/*3        20
+*1/*5         6
+*1/*11        6
+*1/*6         3
+*1/*13        1
+*1/*14        1
+Name: count, dtype: int64
+null value counts: 0
+
+
+Value Counts for VKORC1 -1639 consensus:
+-----------------------
+VKORC1 -1639 consensus
+A/A    1472
+A/G    1396
+G/G    1179
+Name: count, dtype: int64
+null value counts: 1481
+
+
+Value Counts for VKORC1 497 consensus:
+-----------------------
+VKORC1 497 consensus
+T/T    1246
+G/T     530
+G/G      83
+Name: count, dtype: int64
+null value counts: 3669
+
+
+Value Counts for VKORC1 1173 consensus:
+-----------------------
+VKORC1 1173 consensus
+T/T    1526
+C/T    1036
+C/C     953
+Name: count, dtype: int64
+null value counts: 2013
+
+
+Value Counts for VKORC1 1542 consensus:
+-----------------------
+VKORC1 1542 consensus
+C/C    1340
+C/G    1223
+G/G     883
+Name: count, dtype: int64
+null value counts: 2082
+
+
+Value Counts for VKORC1 3730 consensus:
+-----------------------
+VKORC1 3730 consensus
+G/G    1853
+A/G    1070
+A/A     289
+Name: count, dtype: int64
+null value counts: 2316
+
+
+Value Counts for VKORC1 2255 consensus:
+-----------------------
+VKORC1 2255 consensus
+T/T    1201
+C/T     693
+C/C     473
+Name: count, dtype: int64
+null value counts: 3161
+
+
+Value Counts for VKORC1 -4451 consensus:
+-----------------------
+VKORC1 -4451 consensus
+C/C    543
+A/C    269
+A/A     77
+Name: count, dtype: int64
+null value counts: 4639
+
+
+
+
+--------------------------------------------------------------------------------------
+
+
+cleaned dataset successfully saved
