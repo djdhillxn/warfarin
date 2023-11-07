@@ -1,0 +1,21 @@
+Iteration 1: Accuracy = 0.6581041968162084, Cumulative Regret = 1890
+Iteration 2: Accuracy = 0.6611794500723589, Cumulative Regret = 1873
+Iteration 3: Accuracy = 0.657561505065123, Cumulative Regret = 1893
+Iteration 4: Accuracy = 0.6624457308248914, Cumulative Regret = 1866
+Iteration 5: Accuracy = 0.6597322720694645, Cumulative Regret = 1881
+Iteration 6: Accuracy = 0.6546671490593343, Cumulative Regret = 1909
+Iteration 7: Accuracy = 0.6553907380607815, Cumulative Regret = 1905
+Iteration 8: Accuracy = 0.6608176555716353, Cumulative Regret = 1875
+Iteration 9: Accuracy = 0.6619030390738061, Cumulative Regret = 1869
+Iteration 10: Accuracy = 0.6532199710564399, Cumulative Regret = 1917
+Iteration 11: Accuracy = 0.6524963820549927, Cumulative Regret = 1921
+Iteration 12: Accuracy = 0.658465991316932, Cumulative Regret = 1888
+Iteration 13: Accuracy = 0.6537626628075254, Cumulative Regret = 1914
+Iteration 14: Accuracy = 0.6517727930535456, Cumulative Regret = 1925
+Iteration 15: Accuracy = 0.6515918958031838, Cumulative Regret = 1926
+Iteration 16: Accuracy = 0.6577424023154848, Cumulative Regret = 1892
+Iteration 17: Accuracy = 0.6532199710564399, Cumulative Regret = 1917
+Iteration 18: Accuracy = 0.6573806078147613, Cumulative Regret = 1894
+Iteration 19: Accuracy = 0.6619030390738061, Cumulative Regret = 1869
+Iteration 20: Accuracy = 0.6543053545586107, Cumulative Regret = 1911
+Average Accuracy over 20 iterations: 0.6568831403762664
