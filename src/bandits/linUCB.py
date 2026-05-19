@@ -33,51 +33,51 @@ class LinUCB:
         self.b[chosen_arm] += reward * x
     """
 
-# Load the dataset
-df = pd.read_csv('./../preprocessing/data/warfarin_one_hot_encoded_full_power.csv')
+if __name__ == '__main__':
+    # Load the dataset
+    df = pd.read_csv('./../preprocessing/data/warfarin_one_hot_encoded_full_power.csv')
 
-# Define parameters
-alpha = 1.0  # Exploration parameter
-n_iterations = 20
-cumulative_regrets = []
-average_accuracies = []
+    # Define parameters
+    alpha = 1.0  # Exploration parameter
+    n_iterations = 20
+    cumulative_regrets = []
+    average_accuracies = []
 
-# Get the number of arms and features
-n_arms = df['Therapeutic Dose of Warfarin'].nunique()
-n_features = df.shape[1] - 1  # Number of features is total columns minus the label column
+    # Get the number of arms and features
+    n_arms = df['Therapeutic Dose of Warfarin'].nunique()
+    n_features = df.shape[1] - 1  # Number of features is total columns minus the label column
 
-for i in range(n_iterations):
-    df_shuffled = shuffle(df, random_state=i)
-    X = df_shuffled.drop('Therapeutic Dose of Warfarin', axis=1).values
-    y = df_shuffled['Therapeutic Dose of Warfarin'].values
-    
-    # Initialize the LinUCB model
-    linucb = LinUCB(alpha, n_arms, n_features)
-    
-    correct_predictions = 0
-    cumulative_regret = 0
-
-    for j in tqdm(range(len(df_shuffled)), desc=f'Iteration {i+1}'):
-        x = X[j]
-        chosen_arm = linucb.select_arm(x)
-        actual_label = y[j]
+    for i in range(n_iterations):
+        df_shuffled = shuffle(df, random_state=i)
+        X = df_shuffled.drop('Therapeutic Dose of Warfarin', axis=1).values
+        y = df_shuffled['Therapeutic Dose of Warfarin'].values
         
-        reward = 1 if chosen_arm == actual_label else 0
-        correct_predictions += reward
+        # Initialize the LinUCB model
+        linucb = LinUCB(alpha, n_arms, n_features)
         
-        linucb.update(chosen_arm, x, reward)
+        correct_predictions = 0
+        cumulative_regret = 0
+
+        for j in tqdm(range(len(df_shuffled)), desc=f'Iteration {i+1}'):
+            x = X[j]
+            chosen_arm = linucb.select_arm(x)
+            actual_label = y[j]
+            
+            reward = 1 if chosen_arm == actual_label else 0
+            correct_predictions += reward
+            
+            linucb.update(chosen_arm, x, reward)
+            
+            optimal_reward = 1  # assuming the optimal action would always be correct
+            regret = optimal_reward - reward
+            cumulative_regret += regret
         
-        optimal_reward = 1  # assuming the optimal action would always be correct
-        regret = optimal_reward - reward
-        cumulative_regret += regret
-    
-    cumulative_regrets.append(cumulative_regret)
-    
-    accuracy = correct_predictions / len(df_shuffled)
-    average_accuracies.append(accuracy)
-    
-    print(f"Iteration {i+1}: Accuracy = {accuracy}, Cumulative Regret = {cumulative_regret}")
+        cumulative_regrets.append(cumulative_regret)
+        
+        accuracy = correct_predictions / len(df_shuffled)
+        average_accuracies.append(accuracy)
+        
+        print(f"Iteration {i+1}: Accuracy = {accuracy}, Cumulative Regret = {cumulative_regret}")
 
-final_average_accuracy = np.mean(average_accuracies)
-print(f"Average Accuracy over {n_iterations} iterations: {final_average_accuracy}")
-
+    final_average_accuracy = np.mean(average_accuracies)
+    print(f"Average Accuracy over {n_iterations} iterations: {final_average_accuracy}")
