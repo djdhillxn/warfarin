@@ -1,0 +1,8 @@
+feature_set,n_features
+v2_expanded_regression_hw_with_indication_target_inr,235
+v2_iwpc_minimal_regression_hw,26
+v2_pharmacogenetic_augmented_regression_hw,217
+v2_strict_group_median_hw_full_dummies,213
+v2_strict_knn_hw_full_dummies,213
+v2_strict_regression_hw_drop_first,165
+v2_strict_regression_hw_full_dummies,213

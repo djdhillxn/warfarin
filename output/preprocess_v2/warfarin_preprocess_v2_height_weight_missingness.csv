@@ -1,0 +1,5 @@
+case,count,pct
+height_present_weight_present,4417,0.7990231548480463
+height_missing_weight_present,839,0.15177279305354557
+height_present_weight_missing,30,0.005426917510853835
+height_missing_weight_missing,242,0.04377713458755427

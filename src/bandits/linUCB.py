@@ -27,23 +27,17 @@ class LinUCB:
         self.n_features = n_features
         #self.A = [np.identity(n_features) for _ in range(n_arms)]
         self.lambda_reg = lambda_reg
-        self.A = [lambda_reg * np.identity(n_features) for _ in range(n_arms)]
-        self.A_inv = [(1.0 / lambda_reg) * np.identity(n_features) for _ in range(n_arms)]
-        self.b = [np.zeros(n_features) for _ in range(n_arms)]
+        self.A = np.repeat((lambda_reg * np.identity(n_features))[None, :, :], n_arms, axis=0)
+        self.A_inv = np.repeat(((1.0 / lambda_reg) * np.identity(n_features))[None, :, :], n_arms, axis=0)
+        self.b = np.zeros((n_arms, n_features))
+        self.theta = np.zeros((n_arms, n_features))
 
     def select_arm(self, x):
         x = np.asarray(x, dtype=float)
-        p = np.zeros(self.n_arms)
-
-        for arm in range(self.n_arms):
-            A_inv = np.linalg.inv(self.A[arm])
-            #theta = A_inv @ self.b[arm]
-            #p[arm] = theta.T @ x + self.alpha * np.sqrt(x.T @ A_inv @ x)
-            A_inv_x = self.A_inv[arm] @ x
-            theta = self.A_inv[arm] @ self.b[arm]
-            uncertainty = np.sqrt(max(float(x.T @ A_inv_x), 0.0))
-            p[arm] = float(theta.T @ x) + self.alpha * uncertainty
-
+        A_inv_x = self.A_inv @ x
+        mean_reward = self.theta @ x
+        uncertainty = np.sqrt(np.maximum(np.einsum('ij,j->i', A_inv_x, x), 0.0))
+        p = mean_reward + self.alpha * uncertainty
         return int(np.argmax(p))
 
     def update(self, chosen_arm, x, reward):
@@ -59,6 +53,7 @@ class LinUCB:
 
         self.A[chosen_arm] += np.outer(x, x)
         self.b[chosen_arm] += reward * x
+        self.theta[chosen_arm] = self.A_inv[chosen_arm] @ self.b[chosen_arm]
 
     """
     def update(self, chosen_arm, x, reward):

@@ -1,0 +1,7 @@
+{
+  "target_column": "VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T",
+  "missing_before": 1633,
+  "missing_after_decision_rules": 124,
+  "missing_after_unknown_fill": 0,
+  "imputed_by_decision_rules": 1509
+}

@@ -1,0 +1,304 @@
+{
+  "Gender": [
+    "Unknown",
+    "female",
+    "male"
+  ],
+  "Race": [
+    "Asian",
+    "Black or African American",
+    "Unknown",
+    "White"
+  ],
+  "Ethnicity": [
+    "Hispanic or Latino",
+    "Unknown",
+    "not Hispanic or Latino"
+  ],
+  "Diabetes": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Congestive Heart Failure and/or Cardiomyopathy": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Valve Replacement": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Aspirin": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Acetaminophen or Paracetamol (Tylenol)": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Simvastatin (Zocor)": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Atorvastatin (Lipitor)": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Fluvastatin (Lescol)": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Lovastatin (Mevacor)": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Pravastatin (Pravachol)": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Rosuvastatin (Crestor)": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Cerivastatin (Baycol)": [
+    "No",
+    "Unknown"
+  ],
+  "Sulfonamide Antibiotics": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Macrolide Antibiotics": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Anti-fungal Azoles": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Herbal Medications, Vitamins, Supplements": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Current Smoker": [
+    "No",
+    "Unknown",
+    "Yes"
+  ],
+  "Cyp2C9 genotypes": [
+    "*1/*1",
+    "*1/*11",
+    "*1/*13",
+    "*1/*14",
+    "*1/*2",
+    "*1/*3",
+    "*1/*5",
+    "*1/*6",
+    "*2/*2",
+    "*2/*3",
+    "*3/*3",
+    "Unknown"
+  ],
+  "Genotyped QC Cyp2C9*2": [
+    "*1/*1",
+    "*1/*2",
+    "*2/*2",
+    "Unknown"
+  ],
+  "Genotyped QC Cyp2C9*3": [
+    "*1/*1",
+    "*1/*3",
+    "*3/*3",
+    "Unknown"
+  ],
+  "Combined QC CYP2C9": [
+    "*1/*1",
+    "*1/*2",
+    "*1/*3",
+    "*2/*2",
+    "*2/*3",
+    "*3/*3",
+    "Unknown"
+  ],
+  "VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T": [
+    "A/A",
+    "A/G",
+    "G/G",
+    "Unknown"
+  ],
+  "VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T": [
+    "A/A",
+    "A/G",
+    "G/G",
+    "Unknown"
+  ],
+  "VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C": [
+    "G/G",
+    "G/T",
+    "T/T",
+    "Unknown"
+  ],
+  "VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C": [
+    "G/G",
+    "G/T",
+    "T/T",
+    "Unknown"
+  ],
+  "VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G": [
+    "C/C",
+    "C/T",
+    "T/T",
+    "Unknown"
+  ],
+  "VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G": [
+    "C/C",
+    "C/T",
+    "T/T",
+    "Unknown"
+  ],
+  "VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G": [
+    "C/C",
+    "C/G",
+    "G/G",
+    "Unknown"
+  ],
+  "VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G": [
+    "C/C",
+    "C/G",
+    "G/G",
+    "Unknown"
+  ],
+  "VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G": [
+    "A/A",
+    "A/G",
+    "G/G",
+    "Unknown"
+  ],
+  "VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G": [
+    "A/A",
+    "A/G",
+    "G/G",
+    "Unknown"
+  ],
+  "VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G": [
+    "C/C",
+    "C/T",
+    "T/T",
+    "Unknown"
+  ],
+  "VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G": [
+    "C/C",
+    "C/T",
+    "T/T",
+    "Unknown"
+  ],
+  "VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C": [
+    "A/A",
+    "A/C",
+    "C/C",
+    "Unknown"
+  ],
+  "VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C": [
+    "A/A",
+    "A/C",
+    "C/C",
+    "Unknown"
+  ],
+  "CYP2C9 consensus": [
+    "*1/*1",
+    "*1/*11",
+    "*1/*13",
+    "*1/*14",
+    "*1/*2",
+    "*1/*3",
+    "*1/*5",
+    "*1/*6",
+    "*2/*2",
+    "*2/*3",
+    "*3/*3",
+    "Unknown"
+  ],
+  "VKORC1 -1639 consensus": [
+    "A/A",
+    "A/G",
+    "G/G",
+    "Unknown"
+  ],
+  "VKORC1 497 consensus": [
+    "G/G",
+    "G/T",
+    "T/T",
+    "Unknown"
+  ],
+  "VKORC1 1173 consensus": [
+    "C/C",
+    "C/T",
+    "T/T",
+    "Unknown"
+  ],
+  "VKORC1 1542 consensus": [
+    "C/C",
+    "C/G",
+    "G/G",
+    "Unknown"
+  ],
+  "VKORC1 3730 consensus": [
+    "A/A",
+    "A/G",
+    "G/G",
+    "Unknown"
+  ],
+  "VKORC1 2255 consensus": [
+    "C/C",
+    "C/T",
+    "T/T",
+    "Unknown"
+  ],
+  "VKORC1 -4451 consensus": [
+    "A/A",
+    "A/C",
+    "C/C",
+    "Unknown"
+  ],
+  "Age__bucket_unknown": [
+    "10 - 19",
+    "20 - 29",
+    "30 - 39",
+    "40 - 49",
+    "50 - 59",
+    "60 - 69",
+    "70 - 79",
+    "80 - 89",
+    "90+",
+    "Unknown"
+  ],
+  "Estimated Target INR Range Based on Indication__category": [
+    "1.7-2.8",
+    "1.7-3.3",
+    "2-3",
+    "2-3.5",
+    "2.5-3.5",
+    "3-4",
+    "3.0-4.0",
+    "Unknown"
+  ]
+}

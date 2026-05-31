@@ -1,0 +1,7 @@
+baseline,height_weight_variant,accuracy
+Clinical,knn_hw,0.6407380607814761
+Pharmacogenetic,knn_hw,0.690123010130246
+Clinical,group_median_hw,0.6392908827785818
+Pharmacogenetic,group_median_hw,0.691027496382055
+Clinical,regression_hw,0.63910998552822
+Pharmacogenetic,regression_hw,0.691027496382055
