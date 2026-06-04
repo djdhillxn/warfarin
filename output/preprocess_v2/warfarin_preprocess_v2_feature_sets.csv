@@ -1,1043 +1,4 @@
 feature_set,feature_name
-v2_strict_knn_hw_full_dummies,Amiodarone (Cordarone)
-v2_strict_knn_hw_full_dummies,Carbamazepine (Tegretol)
-v2_strict_knn_hw_full_dummies,Phenytoin (Dilantin)
-v2_strict_knn_hw_full_dummies,Rifampin or Rifampicin
-v2_strict_knn_hw_full_dummies,Age__missing
-v2_strict_knn_hw_full_dummies,Age__mode_decade
-v2_strict_knn_hw_full_dummies,Amiodarone (Cordarone)__missing
-v2_strict_knn_hw_full_dummies,Carbamazepine (Tegretol)__missing
-v2_strict_knn_hw_full_dummies,Phenytoin (Dilantin)__missing
-v2_strict_knn_hw_full_dummies,Rifampin or Rifampicin__missing
-v2_strict_knn_hw_full_dummies,Enzyme inducer status
-v2_strict_knn_hw_full_dummies,Height (cm)__missing
-v2_strict_knn_hw_full_dummies,Weight (kg)__missing
-v2_strict_knn_hw_full_dummies,HeightWeight__both_missing
-v2_strict_knn_hw_full_dummies,Height (cm)__knn_hw
-v2_strict_knn_hw_full_dummies,Weight (kg)__knn_hw
-v2_strict_knn_hw_full_dummies,Gender_Unknown
-v2_strict_knn_hw_full_dummies,Gender_female
-v2_strict_knn_hw_full_dummies,Gender_male
-v2_strict_knn_hw_full_dummies,Race_Asian
-v2_strict_knn_hw_full_dummies,Race_Black or African American
-v2_strict_knn_hw_full_dummies,Race_Unknown
-v2_strict_knn_hw_full_dummies,Race_White
-v2_strict_knn_hw_full_dummies,Ethnicity_Hispanic or Latino
-v2_strict_knn_hw_full_dummies,Ethnicity_Unknown
-v2_strict_knn_hw_full_dummies,Ethnicity_not Hispanic or Latino
-v2_strict_knn_hw_full_dummies,Diabetes_No
-v2_strict_knn_hw_full_dummies,Diabetes_Unknown
-v2_strict_knn_hw_full_dummies,Diabetes_Yes
-v2_strict_knn_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_No
-v2_strict_knn_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Unknown
-v2_strict_knn_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Yes
-v2_strict_knn_hw_full_dummies,Valve Replacement_No
-v2_strict_knn_hw_full_dummies,Valve Replacement_Unknown
-v2_strict_knn_hw_full_dummies,Valve Replacement_Yes
-v2_strict_knn_hw_full_dummies,Aspirin_No
-v2_strict_knn_hw_full_dummies,Aspirin_Unknown
-v2_strict_knn_hw_full_dummies,Aspirin_Yes
-v2_strict_knn_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_No
-v2_strict_knn_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Unknown
-v2_strict_knn_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Yes
-v2_strict_knn_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_No
-v2_strict_knn_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Unknown
-v2_strict_knn_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Yes
-v2_strict_knn_hw_full_dummies,Simvastatin (Zocor)_No
-v2_strict_knn_hw_full_dummies,Simvastatin (Zocor)_Unknown
-v2_strict_knn_hw_full_dummies,Simvastatin (Zocor)_Yes
-v2_strict_knn_hw_full_dummies,Atorvastatin (Lipitor)_No
-v2_strict_knn_hw_full_dummies,Atorvastatin (Lipitor)_Unknown
-v2_strict_knn_hw_full_dummies,Atorvastatin (Lipitor)_Yes
-v2_strict_knn_hw_full_dummies,Fluvastatin (Lescol)_No
-v2_strict_knn_hw_full_dummies,Fluvastatin (Lescol)_Unknown
-v2_strict_knn_hw_full_dummies,Fluvastatin (Lescol)_Yes
-v2_strict_knn_hw_full_dummies,Lovastatin (Mevacor)_No
-v2_strict_knn_hw_full_dummies,Lovastatin (Mevacor)_Unknown
-v2_strict_knn_hw_full_dummies,Lovastatin (Mevacor)_Yes
-v2_strict_knn_hw_full_dummies,Pravastatin (Pravachol)_No
-v2_strict_knn_hw_full_dummies,Pravastatin (Pravachol)_Unknown
-v2_strict_knn_hw_full_dummies,Pravastatin (Pravachol)_Yes
-v2_strict_knn_hw_full_dummies,Rosuvastatin (Crestor)_No
-v2_strict_knn_hw_full_dummies,Rosuvastatin (Crestor)_Unknown
-v2_strict_knn_hw_full_dummies,Rosuvastatin (Crestor)_Yes
-v2_strict_knn_hw_full_dummies,Cerivastatin (Baycol)_No
-v2_strict_knn_hw_full_dummies,Cerivastatin (Baycol)_Unknown
-v2_strict_knn_hw_full_dummies,Sulfonamide Antibiotics_No
-v2_strict_knn_hw_full_dummies,Sulfonamide Antibiotics_Unknown
-v2_strict_knn_hw_full_dummies,Sulfonamide Antibiotics_Yes
-v2_strict_knn_hw_full_dummies,Macrolide Antibiotics_No
-v2_strict_knn_hw_full_dummies,Macrolide Antibiotics_Unknown
-v2_strict_knn_hw_full_dummies,Macrolide Antibiotics_Yes
-v2_strict_knn_hw_full_dummies,Anti-fungal Azoles_No
-v2_strict_knn_hw_full_dummies,Anti-fungal Azoles_Unknown
-v2_strict_knn_hw_full_dummies,Anti-fungal Azoles_Yes
-v2_strict_knn_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_No"
-v2_strict_knn_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Unknown"
-v2_strict_knn_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Yes"
-v2_strict_knn_hw_full_dummies,Current Smoker_No
-v2_strict_knn_hw_full_dummies,Current Smoker_Unknown
-v2_strict_knn_hw_full_dummies,Current Smoker_Yes
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*1
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*11
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*13
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*14
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*2
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*3
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*5
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*6
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*2/*2
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*2/*3
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*3/*3
-v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_Unknown
-v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*1
-v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*2
-v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*2_*2/*2
-v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*2_Unknown
-v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*1
-v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*3
-v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*3_*3/*3
-v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*3_Unknown
-v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*1/*1
-v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*1/*2
-v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*1/*3
-v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*2/*2
-v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*2/*3
-v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*3/*3
-v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*1
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*11
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*13
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*14
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*2
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*3
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*5
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*6
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*2/*2
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*2/*3
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*3/*3
-v2_strict_knn_hw_full_dummies,CYP2C9 consensus_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 -1639 consensus_A/A
-v2_strict_knn_hw_full_dummies,VKORC1 -1639 consensus_A/G
-v2_strict_knn_hw_full_dummies,VKORC1 -1639 consensus_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 -1639 consensus_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 497 consensus_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 497 consensus_G/T
-v2_strict_knn_hw_full_dummies,VKORC1 497 consensus_T/T
-v2_strict_knn_hw_full_dummies,VKORC1 497 consensus_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 1173 consensus_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 1173 consensus_C/T
-v2_strict_knn_hw_full_dummies,VKORC1 1173 consensus_T/T
-v2_strict_knn_hw_full_dummies,VKORC1 1173 consensus_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 1542 consensus_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 1542 consensus_C/G
-v2_strict_knn_hw_full_dummies,VKORC1 1542 consensus_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 1542 consensus_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 3730 consensus_A/A
-v2_strict_knn_hw_full_dummies,VKORC1 3730 consensus_A/G
-v2_strict_knn_hw_full_dummies,VKORC1 3730 consensus_G/G
-v2_strict_knn_hw_full_dummies,VKORC1 3730 consensus_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 2255 consensus_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 2255 consensus_C/T
-v2_strict_knn_hw_full_dummies,VKORC1 2255 consensus_T/T
-v2_strict_knn_hw_full_dummies,VKORC1 2255 consensus_Unknown
-v2_strict_knn_hw_full_dummies,VKORC1 -4451 consensus_A/A
-v2_strict_knn_hw_full_dummies,VKORC1 -4451 consensus_A/C
-v2_strict_knn_hw_full_dummies,VKORC1 -4451 consensus_C/C
-v2_strict_knn_hw_full_dummies,VKORC1 -4451 consensus_Unknown
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_10 - 19
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_20 - 29
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_30 - 39
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_40 - 49
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_50 - 59
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_60 - 69
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_70 - 79
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_80 - 89
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_90+
-v2_strict_knn_hw_full_dummies,Age__bucket_unknown_Unknown
-v2_strict_knn_hw_full_dummies,Intercept
-v2_strict_group_median_hw_full_dummies,Amiodarone (Cordarone)
-v2_strict_group_median_hw_full_dummies,Carbamazepine (Tegretol)
-v2_strict_group_median_hw_full_dummies,Phenytoin (Dilantin)
-v2_strict_group_median_hw_full_dummies,Rifampin or Rifampicin
-v2_strict_group_median_hw_full_dummies,Age__missing
-v2_strict_group_median_hw_full_dummies,Age__mode_decade
-v2_strict_group_median_hw_full_dummies,Amiodarone (Cordarone)__missing
-v2_strict_group_median_hw_full_dummies,Carbamazepine (Tegretol)__missing
-v2_strict_group_median_hw_full_dummies,Phenytoin (Dilantin)__missing
-v2_strict_group_median_hw_full_dummies,Rifampin or Rifampicin__missing
-v2_strict_group_median_hw_full_dummies,Enzyme inducer status
-v2_strict_group_median_hw_full_dummies,Height (cm)__missing
-v2_strict_group_median_hw_full_dummies,Weight (kg)__missing
-v2_strict_group_median_hw_full_dummies,HeightWeight__both_missing
-v2_strict_group_median_hw_full_dummies,Height (cm)__group_median
-v2_strict_group_median_hw_full_dummies,Weight (kg)__group_median
-v2_strict_group_median_hw_full_dummies,Gender_Unknown
-v2_strict_group_median_hw_full_dummies,Gender_female
-v2_strict_group_median_hw_full_dummies,Gender_male
-v2_strict_group_median_hw_full_dummies,Race_Asian
-v2_strict_group_median_hw_full_dummies,Race_Black or African American
-v2_strict_group_median_hw_full_dummies,Race_Unknown
-v2_strict_group_median_hw_full_dummies,Race_White
-v2_strict_group_median_hw_full_dummies,Ethnicity_Hispanic or Latino
-v2_strict_group_median_hw_full_dummies,Ethnicity_Unknown
-v2_strict_group_median_hw_full_dummies,Ethnicity_not Hispanic or Latino
-v2_strict_group_median_hw_full_dummies,Diabetes_No
-v2_strict_group_median_hw_full_dummies,Diabetes_Unknown
-v2_strict_group_median_hw_full_dummies,Diabetes_Yes
-v2_strict_group_median_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_No
-v2_strict_group_median_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Unknown
-v2_strict_group_median_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Yes
-v2_strict_group_median_hw_full_dummies,Valve Replacement_No
-v2_strict_group_median_hw_full_dummies,Valve Replacement_Unknown
-v2_strict_group_median_hw_full_dummies,Valve Replacement_Yes
-v2_strict_group_median_hw_full_dummies,Aspirin_No
-v2_strict_group_median_hw_full_dummies,Aspirin_Unknown
-v2_strict_group_median_hw_full_dummies,Aspirin_Yes
-v2_strict_group_median_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_No
-v2_strict_group_median_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Unknown
-v2_strict_group_median_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Yes
-v2_strict_group_median_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_No
-v2_strict_group_median_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Unknown
-v2_strict_group_median_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Yes
-v2_strict_group_median_hw_full_dummies,Simvastatin (Zocor)_No
-v2_strict_group_median_hw_full_dummies,Simvastatin (Zocor)_Unknown
-v2_strict_group_median_hw_full_dummies,Simvastatin (Zocor)_Yes
-v2_strict_group_median_hw_full_dummies,Atorvastatin (Lipitor)_No
-v2_strict_group_median_hw_full_dummies,Atorvastatin (Lipitor)_Unknown
-v2_strict_group_median_hw_full_dummies,Atorvastatin (Lipitor)_Yes
-v2_strict_group_median_hw_full_dummies,Fluvastatin (Lescol)_No
-v2_strict_group_median_hw_full_dummies,Fluvastatin (Lescol)_Unknown
-v2_strict_group_median_hw_full_dummies,Fluvastatin (Lescol)_Yes
-v2_strict_group_median_hw_full_dummies,Lovastatin (Mevacor)_No
-v2_strict_group_median_hw_full_dummies,Lovastatin (Mevacor)_Unknown
-v2_strict_group_median_hw_full_dummies,Lovastatin (Mevacor)_Yes
-v2_strict_group_median_hw_full_dummies,Pravastatin (Pravachol)_No
-v2_strict_group_median_hw_full_dummies,Pravastatin (Pravachol)_Unknown
-v2_strict_group_median_hw_full_dummies,Pravastatin (Pravachol)_Yes
-v2_strict_group_median_hw_full_dummies,Rosuvastatin (Crestor)_No
-v2_strict_group_median_hw_full_dummies,Rosuvastatin (Crestor)_Unknown
-v2_strict_group_median_hw_full_dummies,Rosuvastatin (Crestor)_Yes
-v2_strict_group_median_hw_full_dummies,Cerivastatin (Baycol)_No
-v2_strict_group_median_hw_full_dummies,Cerivastatin (Baycol)_Unknown
-v2_strict_group_median_hw_full_dummies,Sulfonamide Antibiotics_No
-v2_strict_group_median_hw_full_dummies,Sulfonamide Antibiotics_Unknown
-v2_strict_group_median_hw_full_dummies,Sulfonamide Antibiotics_Yes
-v2_strict_group_median_hw_full_dummies,Macrolide Antibiotics_No
-v2_strict_group_median_hw_full_dummies,Macrolide Antibiotics_Unknown
-v2_strict_group_median_hw_full_dummies,Macrolide Antibiotics_Yes
-v2_strict_group_median_hw_full_dummies,Anti-fungal Azoles_No
-v2_strict_group_median_hw_full_dummies,Anti-fungal Azoles_Unknown
-v2_strict_group_median_hw_full_dummies,Anti-fungal Azoles_Yes
-v2_strict_group_median_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_No"
-v2_strict_group_median_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Unknown"
-v2_strict_group_median_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Yes"
-v2_strict_group_median_hw_full_dummies,Current Smoker_No
-v2_strict_group_median_hw_full_dummies,Current Smoker_Unknown
-v2_strict_group_median_hw_full_dummies,Current Smoker_Yes
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*1/*1
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*1/*11
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*1/*13
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*1/*14
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*1/*2
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*1/*3
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*1/*5
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*1/*6
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*2/*2
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*2/*3
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_*3/*3
-v2_strict_group_median_hw_full_dummies,Cyp2C9 genotypes_Unknown
-v2_strict_group_median_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*1
-v2_strict_group_median_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*2
-v2_strict_group_median_hw_full_dummies,Genotyped QC Cyp2C9*2_*2/*2
-v2_strict_group_median_hw_full_dummies,Genotyped QC Cyp2C9*2_Unknown
-v2_strict_group_median_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*1
-v2_strict_group_median_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*3
-v2_strict_group_median_hw_full_dummies,Genotyped QC Cyp2C9*3_*3/*3
-v2_strict_group_median_hw_full_dummies,Genotyped QC Cyp2C9*3_Unknown
-v2_strict_group_median_hw_full_dummies,Combined QC CYP2C9_*1/*1
-v2_strict_group_median_hw_full_dummies,Combined QC CYP2C9_*1/*2
-v2_strict_group_median_hw_full_dummies,Combined QC CYP2C9_*1/*3
-v2_strict_group_median_hw_full_dummies,Combined QC CYP2C9_*2/*2
-v2_strict_group_median_hw_full_dummies,Combined QC CYP2C9_*2/*3
-v2_strict_group_median_hw_full_dummies,Combined QC CYP2C9_*3/*3
-v2_strict_group_median_hw_full_dummies,Combined QC CYP2C9_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*1/*1
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*1/*11
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*1/*13
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*1/*14
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*1/*2
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*1/*3
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*1/*5
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*1/*6
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*2/*2
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*2/*3
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_*3/*3
-v2_strict_group_median_hw_full_dummies,CYP2C9 consensus_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 -1639 consensus_A/A
-v2_strict_group_median_hw_full_dummies,VKORC1 -1639 consensus_A/G
-v2_strict_group_median_hw_full_dummies,VKORC1 -1639 consensus_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 -1639 consensus_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 497 consensus_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 497 consensus_G/T
-v2_strict_group_median_hw_full_dummies,VKORC1 497 consensus_T/T
-v2_strict_group_median_hw_full_dummies,VKORC1 497 consensus_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 1173 consensus_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 1173 consensus_C/T
-v2_strict_group_median_hw_full_dummies,VKORC1 1173 consensus_T/T
-v2_strict_group_median_hw_full_dummies,VKORC1 1173 consensus_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 1542 consensus_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 1542 consensus_C/G
-v2_strict_group_median_hw_full_dummies,VKORC1 1542 consensus_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 1542 consensus_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 3730 consensus_A/A
-v2_strict_group_median_hw_full_dummies,VKORC1 3730 consensus_A/G
-v2_strict_group_median_hw_full_dummies,VKORC1 3730 consensus_G/G
-v2_strict_group_median_hw_full_dummies,VKORC1 3730 consensus_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 2255 consensus_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 2255 consensus_C/T
-v2_strict_group_median_hw_full_dummies,VKORC1 2255 consensus_T/T
-v2_strict_group_median_hw_full_dummies,VKORC1 2255 consensus_Unknown
-v2_strict_group_median_hw_full_dummies,VKORC1 -4451 consensus_A/A
-v2_strict_group_median_hw_full_dummies,VKORC1 -4451 consensus_A/C
-v2_strict_group_median_hw_full_dummies,VKORC1 -4451 consensus_C/C
-v2_strict_group_median_hw_full_dummies,VKORC1 -4451 consensus_Unknown
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_10 - 19
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_20 - 29
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_30 - 39
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_40 - 49
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_50 - 59
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_60 - 69
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_70 - 79
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_80 - 89
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_90+
-v2_strict_group_median_hw_full_dummies,Age__bucket_unknown_Unknown
-v2_strict_group_median_hw_full_dummies,Intercept
-v2_strict_regression_hw_full_dummies,Amiodarone (Cordarone)
-v2_strict_regression_hw_full_dummies,Carbamazepine (Tegretol)
-v2_strict_regression_hw_full_dummies,Phenytoin (Dilantin)
-v2_strict_regression_hw_full_dummies,Rifampin or Rifampicin
-v2_strict_regression_hw_full_dummies,Age__missing
-v2_strict_regression_hw_full_dummies,Age__mode_decade
-v2_strict_regression_hw_full_dummies,Amiodarone (Cordarone)__missing
-v2_strict_regression_hw_full_dummies,Carbamazepine (Tegretol)__missing
-v2_strict_regression_hw_full_dummies,Phenytoin (Dilantin)__missing
-v2_strict_regression_hw_full_dummies,Rifampin or Rifampicin__missing
-v2_strict_regression_hw_full_dummies,Enzyme inducer status
-v2_strict_regression_hw_full_dummies,Height (cm)__missing
-v2_strict_regression_hw_full_dummies,Weight (kg)__missing
-v2_strict_regression_hw_full_dummies,HeightWeight__both_missing
-v2_strict_regression_hw_full_dummies,Height (cm)__regression
-v2_strict_regression_hw_full_dummies,Weight (kg)__regression
-v2_strict_regression_hw_full_dummies,Gender_Unknown
-v2_strict_regression_hw_full_dummies,Gender_female
-v2_strict_regression_hw_full_dummies,Gender_male
-v2_strict_regression_hw_full_dummies,Race_Asian
-v2_strict_regression_hw_full_dummies,Race_Black or African American
-v2_strict_regression_hw_full_dummies,Race_Unknown
-v2_strict_regression_hw_full_dummies,Race_White
-v2_strict_regression_hw_full_dummies,Ethnicity_Hispanic or Latino
-v2_strict_regression_hw_full_dummies,Ethnicity_Unknown
-v2_strict_regression_hw_full_dummies,Ethnicity_not Hispanic or Latino
-v2_strict_regression_hw_full_dummies,Diabetes_No
-v2_strict_regression_hw_full_dummies,Diabetes_Unknown
-v2_strict_regression_hw_full_dummies,Diabetes_Yes
-v2_strict_regression_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_No
-v2_strict_regression_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Unknown
-v2_strict_regression_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Yes
-v2_strict_regression_hw_full_dummies,Valve Replacement_No
-v2_strict_regression_hw_full_dummies,Valve Replacement_Unknown
-v2_strict_regression_hw_full_dummies,Valve Replacement_Yes
-v2_strict_regression_hw_full_dummies,Aspirin_No
-v2_strict_regression_hw_full_dummies,Aspirin_Unknown
-v2_strict_regression_hw_full_dummies,Aspirin_Yes
-v2_strict_regression_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_No
-v2_strict_regression_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Unknown
-v2_strict_regression_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Yes
-v2_strict_regression_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_No
-v2_strict_regression_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Unknown
-v2_strict_regression_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Yes
-v2_strict_regression_hw_full_dummies,Simvastatin (Zocor)_No
-v2_strict_regression_hw_full_dummies,Simvastatin (Zocor)_Unknown
-v2_strict_regression_hw_full_dummies,Simvastatin (Zocor)_Yes
-v2_strict_regression_hw_full_dummies,Atorvastatin (Lipitor)_No
-v2_strict_regression_hw_full_dummies,Atorvastatin (Lipitor)_Unknown
-v2_strict_regression_hw_full_dummies,Atorvastatin (Lipitor)_Yes
-v2_strict_regression_hw_full_dummies,Fluvastatin (Lescol)_No
-v2_strict_regression_hw_full_dummies,Fluvastatin (Lescol)_Unknown
-v2_strict_regression_hw_full_dummies,Fluvastatin (Lescol)_Yes
-v2_strict_regression_hw_full_dummies,Lovastatin (Mevacor)_No
-v2_strict_regression_hw_full_dummies,Lovastatin (Mevacor)_Unknown
-v2_strict_regression_hw_full_dummies,Lovastatin (Mevacor)_Yes
-v2_strict_regression_hw_full_dummies,Pravastatin (Pravachol)_No
-v2_strict_regression_hw_full_dummies,Pravastatin (Pravachol)_Unknown
-v2_strict_regression_hw_full_dummies,Pravastatin (Pravachol)_Yes
-v2_strict_regression_hw_full_dummies,Rosuvastatin (Crestor)_No
-v2_strict_regression_hw_full_dummies,Rosuvastatin (Crestor)_Unknown
-v2_strict_regression_hw_full_dummies,Rosuvastatin (Crestor)_Yes
-v2_strict_regression_hw_full_dummies,Cerivastatin (Baycol)_No
-v2_strict_regression_hw_full_dummies,Cerivastatin (Baycol)_Unknown
-v2_strict_regression_hw_full_dummies,Sulfonamide Antibiotics_No
-v2_strict_regression_hw_full_dummies,Sulfonamide Antibiotics_Unknown
-v2_strict_regression_hw_full_dummies,Sulfonamide Antibiotics_Yes
-v2_strict_regression_hw_full_dummies,Macrolide Antibiotics_No
-v2_strict_regression_hw_full_dummies,Macrolide Antibiotics_Unknown
-v2_strict_regression_hw_full_dummies,Macrolide Antibiotics_Yes
-v2_strict_regression_hw_full_dummies,Anti-fungal Azoles_No
-v2_strict_regression_hw_full_dummies,Anti-fungal Azoles_Unknown
-v2_strict_regression_hw_full_dummies,Anti-fungal Azoles_Yes
-v2_strict_regression_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_No"
-v2_strict_regression_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Unknown"
-v2_strict_regression_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Yes"
-v2_strict_regression_hw_full_dummies,Current Smoker_No
-v2_strict_regression_hw_full_dummies,Current Smoker_Unknown
-v2_strict_regression_hw_full_dummies,Current Smoker_Yes
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*1
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*11
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*13
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*14
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*2
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*3
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*5
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*6
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*2/*2
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*2/*3
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*3/*3
-v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_Unknown
-v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*1
-v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*2
-v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*2_*2/*2
-v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*2_Unknown
-v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*1
-v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*3
-v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*3_*3/*3
-v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*3_Unknown
-v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*1/*1
-v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*1/*2
-v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*1/*3
-v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*2/*2
-v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*2/*3
-v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*3/*3
-v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*1
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*11
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*13
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*14
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*2
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*3
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*5
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*6
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*2/*2
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*2/*3
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*3/*3
-v2_strict_regression_hw_full_dummies,CYP2C9 consensus_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 -1639 consensus_A/A
-v2_strict_regression_hw_full_dummies,VKORC1 -1639 consensus_A/G
-v2_strict_regression_hw_full_dummies,VKORC1 -1639 consensus_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 -1639 consensus_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 497 consensus_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 497 consensus_G/T
-v2_strict_regression_hw_full_dummies,VKORC1 497 consensus_T/T
-v2_strict_regression_hw_full_dummies,VKORC1 497 consensus_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 1173 consensus_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 1173 consensus_C/T
-v2_strict_regression_hw_full_dummies,VKORC1 1173 consensus_T/T
-v2_strict_regression_hw_full_dummies,VKORC1 1173 consensus_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 1542 consensus_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 1542 consensus_C/G
-v2_strict_regression_hw_full_dummies,VKORC1 1542 consensus_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 1542 consensus_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 3730 consensus_A/A
-v2_strict_regression_hw_full_dummies,VKORC1 3730 consensus_A/G
-v2_strict_regression_hw_full_dummies,VKORC1 3730 consensus_G/G
-v2_strict_regression_hw_full_dummies,VKORC1 3730 consensus_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 2255 consensus_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 2255 consensus_C/T
-v2_strict_regression_hw_full_dummies,VKORC1 2255 consensus_T/T
-v2_strict_regression_hw_full_dummies,VKORC1 2255 consensus_Unknown
-v2_strict_regression_hw_full_dummies,VKORC1 -4451 consensus_A/A
-v2_strict_regression_hw_full_dummies,VKORC1 -4451 consensus_A/C
-v2_strict_regression_hw_full_dummies,VKORC1 -4451 consensus_C/C
-v2_strict_regression_hw_full_dummies,VKORC1 -4451 consensus_Unknown
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_10 - 19
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_20 - 29
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_30 - 39
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_40 - 49
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_50 - 59
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_60 - 69
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_70 - 79
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_80 - 89
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_90+
-v2_strict_regression_hw_full_dummies,Age__bucket_unknown_Unknown
-v2_strict_regression_hw_full_dummies,Intercept
-v2_strict_regression_hw_drop_first,Amiodarone (Cordarone)
-v2_strict_regression_hw_drop_first,Carbamazepine (Tegretol)
-v2_strict_regression_hw_drop_first,Phenytoin (Dilantin)
-v2_strict_regression_hw_drop_first,Rifampin or Rifampicin
-v2_strict_regression_hw_drop_first,Age__missing
-v2_strict_regression_hw_drop_first,Age__mode_decade
-v2_strict_regression_hw_drop_first,Amiodarone (Cordarone)__missing
-v2_strict_regression_hw_drop_first,Carbamazepine (Tegretol)__missing
-v2_strict_regression_hw_drop_first,Phenytoin (Dilantin)__missing
-v2_strict_regression_hw_drop_first,Rifampin or Rifampicin__missing
-v2_strict_regression_hw_drop_first,Enzyme inducer status
-v2_strict_regression_hw_drop_first,Height (cm)__missing
-v2_strict_regression_hw_drop_first,Weight (kg)__missing
-v2_strict_regression_hw_drop_first,HeightWeight__both_missing
-v2_strict_regression_hw_drop_first,Height (cm)__regression
-v2_strict_regression_hw_drop_first,Weight (kg)__regression
-v2_strict_regression_hw_drop_first,Gender_female
-v2_strict_regression_hw_drop_first,Gender_male
-v2_strict_regression_hw_drop_first,Race_Black or African American
-v2_strict_regression_hw_drop_first,Race_Unknown
-v2_strict_regression_hw_drop_first,Race_White
-v2_strict_regression_hw_drop_first,Ethnicity_Unknown
-v2_strict_regression_hw_drop_first,Ethnicity_not Hispanic or Latino
-v2_strict_regression_hw_drop_first,Diabetes_Unknown
-v2_strict_regression_hw_drop_first,Diabetes_Yes
-v2_strict_regression_hw_drop_first,Congestive Heart Failure and/or Cardiomyopathy_Unknown
-v2_strict_regression_hw_drop_first,Congestive Heart Failure and/or Cardiomyopathy_Yes
-v2_strict_regression_hw_drop_first,Valve Replacement_Unknown
-v2_strict_regression_hw_drop_first,Valve Replacement_Yes
-v2_strict_regression_hw_drop_first,Aspirin_Unknown
-v2_strict_regression_hw_drop_first,Aspirin_Yes
-v2_strict_regression_hw_drop_first,Acetaminophen or Paracetamol (Tylenol)_Unknown
-v2_strict_regression_hw_drop_first,Acetaminophen or Paracetamol (Tylenol)_Yes
-v2_strict_regression_hw_drop_first,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Unknown
-v2_strict_regression_hw_drop_first,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Yes
-v2_strict_regression_hw_drop_first,Simvastatin (Zocor)_Unknown
-v2_strict_regression_hw_drop_first,Simvastatin (Zocor)_Yes
-v2_strict_regression_hw_drop_first,Atorvastatin (Lipitor)_Unknown
-v2_strict_regression_hw_drop_first,Atorvastatin (Lipitor)_Yes
-v2_strict_regression_hw_drop_first,Fluvastatin (Lescol)_Unknown
-v2_strict_regression_hw_drop_first,Fluvastatin (Lescol)_Yes
-v2_strict_regression_hw_drop_first,Lovastatin (Mevacor)_Unknown
-v2_strict_regression_hw_drop_first,Lovastatin (Mevacor)_Yes
-v2_strict_regression_hw_drop_first,Pravastatin (Pravachol)_Unknown
-v2_strict_regression_hw_drop_first,Pravastatin (Pravachol)_Yes
-v2_strict_regression_hw_drop_first,Rosuvastatin (Crestor)_Unknown
-v2_strict_regression_hw_drop_first,Rosuvastatin (Crestor)_Yes
-v2_strict_regression_hw_drop_first,Cerivastatin (Baycol)_Unknown
-v2_strict_regression_hw_drop_first,Sulfonamide Antibiotics_Unknown
-v2_strict_regression_hw_drop_first,Sulfonamide Antibiotics_Yes
-v2_strict_regression_hw_drop_first,Macrolide Antibiotics_Unknown
-v2_strict_regression_hw_drop_first,Macrolide Antibiotics_Yes
-v2_strict_regression_hw_drop_first,Anti-fungal Azoles_Unknown
-v2_strict_regression_hw_drop_first,Anti-fungal Azoles_Yes
-v2_strict_regression_hw_drop_first,"Herbal Medications, Vitamins, Supplements_Unknown"
-v2_strict_regression_hw_drop_first,"Herbal Medications, Vitamins, Supplements_Yes"
-v2_strict_regression_hw_drop_first,Current Smoker_Unknown
-v2_strict_regression_hw_drop_first,Current Smoker_Yes
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*1/*11
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*1/*13
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*1/*14
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*1/*2
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*1/*3
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*1/*5
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*1/*6
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*2/*2
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*2/*3
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_*3/*3
-v2_strict_regression_hw_drop_first,Cyp2C9 genotypes_Unknown
-v2_strict_regression_hw_drop_first,Genotyped QC Cyp2C9*2_*1/*2
-v2_strict_regression_hw_drop_first,Genotyped QC Cyp2C9*2_*2/*2
-v2_strict_regression_hw_drop_first,Genotyped QC Cyp2C9*2_Unknown
-v2_strict_regression_hw_drop_first,Genotyped QC Cyp2C9*3_*1/*3
-v2_strict_regression_hw_drop_first,Genotyped QC Cyp2C9*3_*3/*3
-v2_strict_regression_hw_drop_first,Genotyped QC Cyp2C9*3_Unknown
-v2_strict_regression_hw_drop_first,Combined QC CYP2C9_*1/*2
-v2_strict_regression_hw_drop_first,Combined QC CYP2C9_*1/*3
-v2_strict_regression_hw_drop_first,Combined QC CYP2C9_*2/*2
-v2_strict_regression_hw_drop_first,Combined QC CYP2C9_*2/*3
-v2_strict_regression_hw_drop_first,Combined QC CYP2C9_*3/*3
-v2_strict_regression_hw_drop_first,Combined QC CYP2C9_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_strict_regression_hw_drop_first,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_strict_regression_hw_drop_first,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_strict_regression_hw_drop_first,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_strict_regression_hw_drop_first,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_strict_regression_hw_drop_first,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_strict_regression_hw_drop_first,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*1/*11
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*1/*13
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*1/*14
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*1/*2
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*1/*3
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*1/*5
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*1/*6
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*2/*2
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*2/*3
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_*3/*3
-v2_strict_regression_hw_drop_first,CYP2C9 consensus_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 -1639 consensus_A/G
-v2_strict_regression_hw_drop_first,VKORC1 -1639 consensus_G/G
-v2_strict_regression_hw_drop_first,VKORC1 -1639 consensus_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 497 consensus_G/T
-v2_strict_regression_hw_drop_first,VKORC1 497 consensus_T/T
-v2_strict_regression_hw_drop_first,VKORC1 497 consensus_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 1173 consensus_C/T
-v2_strict_regression_hw_drop_first,VKORC1 1173 consensus_T/T
-v2_strict_regression_hw_drop_first,VKORC1 1173 consensus_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 1542 consensus_C/G
-v2_strict_regression_hw_drop_first,VKORC1 1542 consensus_G/G
-v2_strict_regression_hw_drop_first,VKORC1 1542 consensus_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 3730 consensus_A/G
-v2_strict_regression_hw_drop_first,VKORC1 3730 consensus_G/G
-v2_strict_regression_hw_drop_first,VKORC1 3730 consensus_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 2255 consensus_C/T
-v2_strict_regression_hw_drop_first,VKORC1 2255 consensus_T/T
-v2_strict_regression_hw_drop_first,VKORC1 2255 consensus_Unknown
-v2_strict_regression_hw_drop_first,VKORC1 -4451 consensus_A/C
-v2_strict_regression_hw_drop_first,VKORC1 -4451 consensus_C/C
-v2_strict_regression_hw_drop_first,VKORC1 -4451 consensus_Unknown
-v2_strict_regression_hw_drop_first,Age__bucket_unknown_20 - 29
-v2_strict_regression_hw_drop_first,Age__bucket_unknown_30 - 39
-v2_strict_regression_hw_drop_first,Age__bucket_unknown_40 - 49
-v2_strict_regression_hw_drop_first,Age__bucket_unknown_50 - 59
-v2_strict_regression_hw_drop_first,Age__bucket_unknown_60 - 69
-v2_strict_regression_hw_drop_first,Age__bucket_unknown_70 - 79
-v2_strict_regression_hw_drop_first,Age__bucket_unknown_80 - 89
-v2_strict_regression_hw_drop_first,Age__bucket_unknown_90+
-v2_strict_regression_hw_drop_first,Age__bucket_unknown_Unknown
-v2_strict_regression_hw_drop_first,Intercept
-v2_expanded_regression_hw_with_indication_target_inr,Amiodarone (Cordarone)
-v2_expanded_regression_hw_with_indication_target_inr,Carbamazepine (Tegretol)
-v2_expanded_regression_hw_with_indication_target_inr,Phenytoin (Dilantin)
-v2_expanded_regression_hw_with_indication_target_inr,Rifampin or Rifampicin
-v2_expanded_regression_hw_with_indication_target_inr,Age__missing
-v2_expanded_regression_hw_with_indication_target_inr,Age__mode_decade
-v2_expanded_regression_hw_with_indication_target_inr,Amiodarone (Cordarone)__missing
-v2_expanded_regression_hw_with_indication_target_inr,Carbamazepine (Tegretol)__missing
-v2_expanded_regression_hw_with_indication_target_inr,Phenytoin (Dilantin)__missing
-v2_expanded_regression_hw_with_indication_target_inr,Rifampin or Rifampicin__missing
-v2_expanded_regression_hw_with_indication_target_inr,Enzyme inducer status
-v2_expanded_regression_hw_with_indication_target_inr,Target INR__known
-v2_expanded_regression_hw_with_indication_target_inr,Target INR__filled_median
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__midpoint_known
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__midpoint_filled_median
-v2_expanded_regression_hw_with_indication_target_inr,Indication__DVT
-v2_expanded_regression_hw_with_indication_target_inr,Indication__PE
-v2_expanded_regression_hw_with_indication_target_inr,Indication__Afib_or_flutter
-v2_expanded_regression_hw_with_indication_target_inr,Indication__Heart_Valve
-v2_expanded_regression_hw_with_indication_target_inr,Indication__Cardiomyopathy_or_LV_Dilation
-v2_expanded_regression_hw_with_indication_target_inr,Indication__Stroke
-v2_expanded_regression_hw_with_indication_target_inr,Indication__Post_Orthopedic
-v2_expanded_regression_hw_with_indication_target_inr,Indication__Other
-v2_expanded_regression_hw_with_indication_target_inr,Indication__Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Indication__Multiple
-v2_expanded_regression_hw_with_indication_target_inr,Height (cm)__missing
-v2_expanded_regression_hw_with_indication_target_inr,Weight (kg)__missing
-v2_expanded_regression_hw_with_indication_target_inr,HeightWeight__both_missing
-v2_expanded_regression_hw_with_indication_target_inr,Height (cm)__regression
-v2_expanded_regression_hw_with_indication_target_inr,Weight (kg)__regression
-v2_expanded_regression_hw_with_indication_target_inr,Gender_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Gender_female
-v2_expanded_regression_hw_with_indication_target_inr,Gender_male
-v2_expanded_regression_hw_with_indication_target_inr,Race_Asian
-v2_expanded_regression_hw_with_indication_target_inr,Race_Black or African American
-v2_expanded_regression_hw_with_indication_target_inr,Race_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Race_White
-v2_expanded_regression_hw_with_indication_target_inr,Ethnicity_Hispanic or Latino
-v2_expanded_regression_hw_with_indication_target_inr,Ethnicity_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Ethnicity_not Hispanic or Latino
-v2_expanded_regression_hw_with_indication_target_inr,Diabetes_No
-v2_expanded_regression_hw_with_indication_target_inr,Diabetes_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Diabetes_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Congestive Heart Failure and/or Cardiomyopathy_No
-v2_expanded_regression_hw_with_indication_target_inr,Congestive Heart Failure and/or Cardiomyopathy_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Congestive Heart Failure and/or Cardiomyopathy_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Valve Replacement_No
-v2_expanded_regression_hw_with_indication_target_inr,Valve Replacement_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Valve Replacement_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Aspirin_No
-v2_expanded_regression_hw_with_indication_target_inr,Aspirin_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Aspirin_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Acetaminophen or Paracetamol (Tylenol)_No
-v2_expanded_regression_hw_with_indication_target_inr,Acetaminophen or Paracetamol (Tylenol)_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Acetaminophen or Paracetamol (Tylenol)_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_No
-v2_expanded_regression_hw_with_indication_target_inr,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Simvastatin (Zocor)_No
-v2_expanded_regression_hw_with_indication_target_inr,Simvastatin (Zocor)_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Simvastatin (Zocor)_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Atorvastatin (Lipitor)_No
-v2_expanded_regression_hw_with_indication_target_inr,Atorvastatin (Lipitor)_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Atorvastatin (Lipitor)_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Fluvastatin (Lescol)_No
-v2_expanded_regression_hw_with_indication_target_inr,Fluvastatin (Lescol)_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Fluvastatin (Lescol)_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Lovastatin (Mevacor)_No
-v2_expanded_regression_hw_with_indication_target_inr,Lovastatin (Mevacor)_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Lovastatin (Mevacor)_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Pravastatin (Pravachol)_No
-v2_expanded_regression_hw_with_indication_target_inr,Pravastatin (Pravachol)_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Pravastatin (Pravachol)_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Rosuvastatin (Crestor)_No
-v2_expanded_regression_hw_with_indication_target_inr,Rosuvastatin (Crestor)_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Rosuvastatin (Crestor)_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Cerivastatin (Baycol)_No
-v2_expanded_regression_hw_with_indication_target_inr,Cerivastatin (Baycol)_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Sulfonamide Antibiotics_No
-v2_expanded_regression_hw_with_indication_target_inr,Sulfonamide Antibiotics_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Sulfonamide Antibiotics_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Macrolide Antibiotics_No
-v2_expanded_regression_hw_with_indication_target_inr,Macrolide Antibiotics_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Macrolide Antibiotics_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Anti-fungal Azoles_No
-v2_expanded_regression_hw_with_indication_target_inr,Anti-fungal Azoles_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Anti-fungal Azoles_Yes
-v2_expanded_regression_hw_with_indication_target_inr,"Herbal Medications, Vitamins, Supplements_No"
-v2_expanded_regression_hw_with_indication_target_inr,"Herbal Medications, Vitamins, Supplements_Unknown"
-v2_expanded_regression_hw_with_indication_target_inr,"Herbal Medications, Vitamins, Supplements_Yes"
-v2_expanded_regression_hw_with_indication_target_inr,Current Smoker_No
-v2_expanded_regression_hw_with_indication_target_inr,Current Smoker_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Current Smoker_Yes
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*1/*1
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*1/*11
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*1/*13
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*1/*14
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*1/*2
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*1/*3
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*1/*5
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*1/*6
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*2/*2
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*2/*3
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_*3/*3
-v2_expanded_regression_hw_with_indication_target_inr,Cyp2C9 genotypes_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Genotyped QC Cyp2C9*2_*1/*1
-v2_expanded_regression_hw_with_indication_target_inr,Genotyped QC Cyp2C9*2_*1/*2
-v2_expanded_regression_hw_with_indication_target_inr,Genotyped QC Cyp2C9*2_*2/*2
-v2_expanded_regression_hw_with_indication_target_inr,Genotyped QC Cyp2C9*2_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Genotyped QC Cyp2C9*3_*1/*1
-v2_expanded_regression_hw_with_indication_target_inr,Genotyped QC Cyp2C9*3_*1/*3
-v2_expanded_regression_hw_with_indication_target_inr,Genotyped QC Cyp2C9*3_*3/*3
-v2_expanded_regression_hw_with_indication_target_inr,Genotyped QC Cyp2C9*3_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Combined QC CYP2C9_*1/*1
-v2_expanded_regression_hw_with_indication_target_inr,Combined QC CYP2C9_*1/*2
-v2_expanded_regression_hw_with_indication_target_inr,Combined QC CYP2C9_*1/*3
-v2_expanded_regression_hw_with_indication_target_inr,Combined QC CYP2C9_*2/*2
-v2_expanded_regression_hw_with_indication_target_inr,Combined QC CYP2C9_*2/*3
-v2_expanded_regression_hw_with_indication_target_inr,Combined QC CYP2C9_*3/*3
-v2_expanded_regression_hw_with_indication_target_inr,Combined QC CYP2C9_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*1/*1
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*1/*11
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*1/*13
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*1/*14
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*1/*2
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*1/*3
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*1/*5
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*1/*6
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*2/*2
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*2/*3
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_*3/*3
-v2_expanded_regression_hw_with_indication_target_inr,CYP2C9 consensus_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 -1639 consensus_A/A
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 -1639 consensus_A/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 -1639 consensus_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 -1639 consensus_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 497 consensus_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 497 consensus_G/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 497 consensus_T/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 497 consensus_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 1173 consensus_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 1173 consensus_C/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 1173 consensus_T/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 1173 consensus_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 1542 consensus_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 1542 consensus_C/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 1542 consensus_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 1542 consensus_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 3730 consensus_A/A
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 3730 consensus_A/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 3730 consensus_G/G
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 3730 consensus_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 2255 consensus_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 2255 consensus_C/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 2255 consensus_T/T
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 2255 consensus_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 -4451 consensus_A/A
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 -4451 consensus_A/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 -4451 consensus_C/C
-v2_expanded_regression_hw_with_indication_target_inr,VKORC1 -4451 consensus_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_10 - 19
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_20 - 29
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_30 - 39
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_40 - 49
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_50 - 59
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_60 - 69
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_70 - 79
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_80 - 89
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_90+
-v2_expanded_regression_hw_with_indication_target_inr,Age__bucket_unknown_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__category_1.7-2.8
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__category_1.7-3.3
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__category_2-3
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__category_2-3.5
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__category_2.5-3.5
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__category_3-4
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__category_3.0-4.0
-v2_expanded_regression_hw_with_indication_target_inr,Estimated Target INR Range Based on Indication__category_Unknown
-v2_expanded_regression_hw_with_indication_target_inr,Intercept
 v2_pharmacogenetic_augmented_regression_hw,Amiodarone (Cordarone)
 v2_pharmacogenetic_augmented_regression_hw,Carbamazepine (Tegretol)
 v2_pharmacogenetic_augmented_regression_hw,Phenytoin (Dilantin)
@@ -1255,29 +216,429 @@ v2_pharmacogenetic_augmented_regression_hw,Age__bucket_unknown_80 - 89
 v2_pharmacogenetic_augmented_regression_hw,Age__bucket_unknown_90+
 v2_pharmacogenetic_augmented_regression_hw,Age__bucket_unknown_Unknown
 v2_pharmacogenetic_augmented_regression_hw,Intercept
-v2_iwpc_minimal_regression_hw,Amiodarone (Cordarone)
-v2_iwpc_minimal_regression_hw,Age__mode_decade
-v2_iwpc_minimal_regression_hw,Enzyme inducer status
-v2_iwpc_minimal_regression_hw,Height (cm)__regression
-v2_iwpc_minimal_regression_hw,Weight (kg)__regression
-v2_iwpc_minimal_regression_hw,Intercept
-v2_iwpc_minimal_regression_hw,Race_Asian
-v2_iwpc_minimal_regression_hw,Race_Black or African American
-v2_iwpc_minimal_regression_hw,Race_Unknown
-v2_iwpc_minimal_regression_hw,Race_White
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*1/*1
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*1/*11
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*1/*13
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*1/*14
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*1/*2
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*1/*3
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*1/*5
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*1/*6
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*2/*2
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*2/*3
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_*3/*3
-v2_iwpc_minimal_regression_hw,Cyp2C9 genotypes_Unknown
-v2_iwpc_minimal_regression_hw,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
-v2_iwpc_minimal_regression_hw,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
-v2_iwpc_minimal_regression_hw,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
-v2_iwpc_minimal_regression_hw,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
+v2_strict_regression_hw_full_dummies,Amiodarone (Cordarone)
+v2_strict_regression_hw_full_dummies,Carbamazepine (Tegretol)
+v2_strict_regression_hw_full_dummies,Phenytoin (Dilantin)
+v2_strict_regression_hw_full_dummies,Rifampin or Rifampicin
+v2_strict_regression_hw_full_dummies,Age__missing
+v2_strict_regression_hw_full_dummies,Age__mode_decade
+v2_strict_regression_hw_full_dummies,Amiodarone (Cordarone)__missing
+v2_strict_regression_hw_full_dummies,Carbamazepine (Tegretol)__missing
+v2_strict_regression_hw_full_dummies,Phenytoin (Dilantin)__missing
+v2_strict_regression_hw_full_dummies,Rifampin or Rifampicin__missing
+v2_strict_regression_hw_full_dummies,Enzyme inducer status
+v2_strict_regression_hw_full_dummies,Height (cm)__missing
+v2_strict_regression_hw_full_dummies,Weight (kg)__missing
+v2_strict_regression_hw_full_dummies,HeightWeight__both_missing
+v2_strict_regression_hw_full_dummies,Height (cm)__regression
+v2_strict_regression_hw_full_dummies,Weight (kg)__regression
+v2_strict_regression_hw_full_dummies,Gender_Unknown
+v2_strict_regression_hw_full_dummies,Gender_female
+v2_strict_regression_hw_full_dummies,Gender_male
+v2_strict_regression_hw_full_dummies,Race_Asian
+v2_strict_regression_hw_full_dummies,Race_Black or African American
+v2_strict_regression_hw_full_dummies,Race_Unknown
+v2_strict_regression_hw_full_dummies,Race_White
+v2_strict_regression_hw_full_dummies,Ethnicity_Hispanic or Latino
+v2_strict_regression_hw_full_dummies,Ethnicity_Unknown
+v2_strict_regression_hw_full_dummies,Ethnicity_not Hispanic or Latino
+v2_strict_regression_hw_full_dummies,Diabetes_No
+v2_strict_regression_hw_full_dummies,Diabetes_Unknown
+v2_strict_regression_hw_full_dummies,Diabetes_Yes
+v2_strict_regression_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_No
+v2_strict_regression_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Unknown
+v2_strict_regression_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Yes
+v2_strict_regression_hw_full_dummies,Valve Replacement_No
+v2_strict_regression_hw_full_dummies,Valve Replacement_Unknown
+v2_strict_regression_hw_full_dummies,Valve Replacement_Yes
+v2_strict_regression_hw_full_dummies,Aspirin_No
+v2_strict_regression_hw_full_dummies,Aspirin_Unknown
+v2_strict_regression_hw_full_dummies,Aspirin_Yes
+v2_strict_regression_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_No
+v2_strict_regression_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Unknown
+v2_strict_regression_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Yes
+v2_strict_regression_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_No
+v2_strict_regression_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Unknown
+v2_strict_regression_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Yes
+v2_strict_regression_hw_full_dummies,Simvastatin (Zocor)_No
+v2_strict_regression_hw_full_dummies,Simvastatin (Zocor)_Unknown
+v2_strict_regression_hw_full_dummies,Simvastatin (Zocor)_Yes
+v2_strict_regression_hw_full_dummies,Atorvastatin (Lipitor)_No
+v2_strict_regression_hw_full_dummies,Atorvastatin (Lipitor)_Unknown
+v2_strict_regression_hw_full_dummies,Atorvastatin (Lipitor)_Yes
+v2_strict_regression_hw_full_dummies,Fluvastatin (Lescol)_No
+v2_strict_regression_hw_full_dummies,Fluvastatin (Lescol)_Unknown
+v2_strict_regression_hw_full_dummies,Fluvastatin (Lescol)_Yes
+v2_strict_regression_hw_full_dummies,Lovastatin (Mevacor)_No
+v2_strict_regression_hw_full_dummies,Lovastatin (Mevacor)_Unknown
+v2_strict_regression_hw_full_dummies,Lovastatin (Mevacor)_Yes
+v2_strict_regression_hw_full_dummies,Pravastatin (Pravachol)_No
+v2_strict_regression_hw_full_dummies,Pravastatin (Pravachol)_Unknown
+v2_strict_regression_hw_full_dummies,Pravastatin (Pravachol)_Yes
+v2_strict_regression_hw_full_dummies,Rosuvastatin (Crestor)_No
+v2_strict_regression_hw_full_dummies,Rosuvastatin (Crestor)_Unknown
+v2_strict_regression_hw_full_dummies,Rosuvastatin (Crestor)_Yes
+v2_strict_regression_hw_full_dummies,Cerivastatin (Baycol)_No
+v2_strict_regression_hw_full_dummies,Cerivastatin (Baycol)_Unknown
+v2_strict_regression_hw_full_dummies,Sulfonamide Antibiotics_No
+v2_strict_regression_hw_full_dummies,Sulfonamide Antibiotics_Unknown
+v2_strict_regression_hw_full_dummies,Sulfonamide Antibiotics_Yes
+v2_strict_regression_hw_full_dummies,Macrolide Antibiotics_No
+v2_strict_regression_hw_full_dummies,Macrolide Antibiotics_Unknown
+v2_strict_regression_hw_full_dummies,Macrolide Antibiotics_Yes
+v2_strict_regression_hw_full_dummies,Anti-fungal Azoles_No
+v2_strict_regression_hw_full_dummies,Anti-fungal Azoles_Unknown
+v2_strict_regression_hw_full_dummies,Anti-fungal Azoles_Yes
+v2_strict_regression_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_No"
+v2_strict_regression_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Unknown"
+v2_strict_regression_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Yes"
+v2_strict_regression_hw_full_dummies,Current Smoker_No
+v2_strict_regression_hw_full_dummies,Current Smoker_Unknown
+v2_strict_regression_hw_full_dummies,Current Smoker_Yes
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*1
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*11
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*13
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*14
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*2
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*3
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*5
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*1/*6
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*2/*2
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*2/*3
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_*3/*3
+v2_strict_regression_hw_full_dummies,Cyp2C9 genotypes_Unknown
+v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*1
+v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*2
+v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*2_*2/*2
+v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*2_Unknown
+v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*1
+v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*3
+v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*3_*3/*3
+v2_strict_regression_hw_full_dummies,Genotyped QC Cyp2C9*3_Unknown
+v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*1/*1
+v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*1/*2
+v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*1/*3
+v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*2/*2
+v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*2/*3
+v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_*3/*3
+v2_strict_regression_hw_full_dummies,Combined QC CYP2C9_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*1
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*11
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*13
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*14
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*2
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*3
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*5
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*1/*6
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*2/*2
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*2/*3
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_*3/*3
+v2_strict_regression_hw_full_dummies,CYP2C9 consensus_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 -1639 consensus_A/A
+v2_strict_regression_hw_full_dummies,VKORC1 -1639 consensus_A/G
+v2_strict_regression_hw_full_dummies,VKORC1 -1639 consensus_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 -1639 consensus_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 497 consensus_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 497 consensus_G/T
+v2_strict_regression_hw_full_dummies,VKORC1 497 consensus_T/T
+v2_strict_regression_hw_full_dummies,VKORC1 497 consensus_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 1173 consensus_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 1173 consensus_C/T
+v2_strict_regression_hw_full_dummies,VKORC1 1173 consensus_T/T
+v2_strict_regression_hw_full_dummies,VKORC1 1173 consensus_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 1542 consensus_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 1542 consensus_C/G
+v2_strict_regression_hw_full_dummies,VKORC1 1542 consensus_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 1542 consensus_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 3730 consensus_A/A
+v2_strict_regression_hw_full_dummies,VKORC1 3730 consensus_A/G
+v2_strict_regression_hw_full_dummies,VKORC1 3730 consensus_G/G
+v2_strict_regression_hw_full_dummies,VKORC1 3730 consensus_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 2255 consensus_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 2255 consensus_C/T
+v2_strict_regression_hw_full_dummies,VKORC1 2255 consensus_T/T
+v2_strict_regression_hw_full_dummies,VKORC1 2255 consensus_Unknown
+v2_strict_regression_hw_full_dummies,VKORC1 -4451 consensus_A/A
+v2_strict_regression_hw_full_dummies,VKORC1 -4451 consensus_A/C
+v2_strict_regression_hw_full_dummies,VKORC1 -4451 consensus_C/C
+v2_strict_regression_hw_full_dummies,VKORC1 -4451 consensus_Unknown
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_10 - 19
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_20 - 29
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_30 - 39
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_40 - 49
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_50 - 59
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_60 - 69
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_70 - 79
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_80 - 89
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_90+
+v2_strict_regression_hw_full_dummies,Age__bucket_unknown_Unknown
+v2_strict_regression_hw_full_dummies,Intercept
+v2_strict_knn_hw_full_dummies,Amiodarone (Cordarone)
+v2_strict_knn_hw_full_dummies,Carbamazepine (Tegretol)
+v2_strict_knn_hw_full_dummies,Phenytoin (Dilantin)
+v2_strict_knn_hw_full_dummies,Rifampin or Rifampicin
+v2_strict_knn_hw_full_dummies,Age__missing
+v2_strict_knn_hw_full_dummies,Age__mode_decade
+v2_strict_knn_hw_full_dummies,Amiodarone (Cordarone)__missing
+v2_strict_knn_hw_full_dummies,Carbamazepine (Tegretol)__missing
+v2_strict_knn_hw_full_dummies,Phenytoin (Dilantin)__missing
+v2_strict_knn_hw_full_dummies,Rifampin or Rifampicin__missing
+v2_strict_knn_hw_full_dummies,Enzyme inducer status
+v2_strict_knn_hw_full_dummies,Height (cm)__missing
+v2_strict_knn_hw_full_dummies,Weight (kg)__missing
+v2_strict_knn_hw_full_dummies,HeightWeight__both_missing
+v2_strict_knn_hw_full_dummies,Height (cm)__knn_hw
+v2_strict_knn_hw_full_dummies,Weight (kg)__knn_hw
+v2_strict_knn_hw_full_dummies,Gender_Unknown
+v2_strict_knn_hw_full_dummies,Gender_female
+v2_strict_knn_hw_full_dummies,Gender_male
+v2_strict_knn_hw_full_dummies,Race_Asian
+v2_strict_knn_hw_full_dummies,Race_Black or African American
+v2_strict_knn_hw_full_dummies,Race_Unknown
+v2_strict_knn_hw_full_dummies,Race_White
+v2_strict_knn_hw_full_dummies,Ethnicity_Hispanic or Latino
+v2_strict_knn_hw_full_dummies,Ethnicity_Unknown
+v2_strict_knn_hw_full_dummies,Ethnicity_not Hispanic or Latino
+v2_strict_knn_hw_full_dummies,Diabetes_No
+v2_strict_knn_hw_full_dummies,Diabetes_Unknown
+v2_strict_knn_hw_full_dummies,Diabetes_Yes
+v2_strict_knn_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_No
+v2_strict_knn_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Unknown
+v2_strict_knn_hw_full_dummies,Congestive Heart Failure and/or Cardiomyopathy_Yes
+v2_strict_knn_hw_full_dummies,Valve Replacement_No
+v2_strict_knn_hw_full_dummies,Valve Replacement_Unknown
+v2_strict_knn_hw_full_dummies,Valve Replacement_Yes
+v2_strict_knn_hw_full_dummies,Aspirin_No
+v2_strict_knn_hw_full_dummies,Aspirin_Unknown
+v2_strict_knn_hw_full_dummies,Aspirin_Yes
+v2_strict_knn_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_No
+v2_strict_knn_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Unknown
+v2_strict_knn_hw_full_dummies,Acetaminophen or Paracetamol (Tylenol)_Yes
+v2_strict_knn_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_No
+v2_strict_knn_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Unknown
+v2_strict_knn_hw_full_dummies,Was Dose of Acetaminophen or Paracetamol (Tylenol) >1300mg/day_Yes
+v2_strict_knn_hw_full_dummies,Simvastatin (Zocor)_No
+v2_strict_knn_hw_full_dummies,Simvastatin (Zocor)_Unknown
+v2_strict_knn_hw_full_dummies,Simvastatin (Zocor)_Yes
+v2_strict_knn_hw_full_dummies,Atorvastatin (Lipitor)_No
+v2_strict_knn_hw_full_dummies,Atorvastatin (Lipitor)_Unknown
+v2_strict_knn_hw_full_dummies,Atorvastatin (Lipitor)_Yes
+v2_strict_knn_hw_full_dummies,Fluvastatin (Lescol)_No
+v2_strict_knn_hw_full_dummies,Fluvastatin (Lescol)_Unknown
+v2_strict_knn_hw_full_dummies,Fluvastatin (Lescol)_Yes
+v2_strict_knn_hw_full_dummies,Lovastatin (Mevacor)_No
+v2_strict_knn_hw_full_dummies,Lovastatin (Mevacor)_Unknown
+v2_strict_knn_hw_full_dummies,Lovastatin (Mevacor)_Yes
+v2_strict_knn_hw_full_dummies,Pravastatin (Pravachol)_No
+v2_strict_knn_hw_full_dummies,Pravastatin (Pravachol)_Unknown
+v2_strict_knn_hw_full_dummies,Pravastatin (Pravachol)_Yes
+v2_strict_knn_hw_full_dummies,Rosuvastatin (Crestor)_No
+v2_strict_knn_hw_full_dummies,Rosuvastatin (Crestor)_Unknown
+v2_strict_knn_hw_full_dummies,Rosuvastatin (Crestor)_Yes
+v2_strict_knn_hw_full_dummies,Cerivastatin (Baycol)_No
+v2_strict_knn_hw_full_dummies,Cerivastatin (Baycol)_Unknown
+v2_strict_knn_hw_full_dummies,Sulfonamide Antibiotics_No
+v2_strict_knn_hw_full_dummies,Sulfonamide Antibiotics_Unknown
+v2_strict_knn_hw_full_dummies,Sulfonamide Antibiotics_Yes
+v2_strict_knn_hw_full_dummies,Macrolide Antibiotics_No
+v2_strict_knn_hw_full_dummies,Macrolide Antibiotics_Unknown
+v2_strict_knn_hw_full_dummies,Macrolide Antibiotics_Yes
+v2_strict_knn_hw_full_dummies,Anti-fungal Azoles_No
+v2_strict_knn_hw_full_dummies,Anti-fungal Azoles_Unknown
+v2_strict_knn_hw_full_dummies,Anti-fungal Azoles_Yes
+v2_strict_knn_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_No"
+v2_strict_knn_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Unknown"
+v2_strict_knn_hw_full_dummies,"Herbal Medications, Vitamins, Supplements_Yes"
+v2_strict_knn_hw_full_dummies,Current Smoker_No
+v2_strict_knn_hw_full_dummies,Current Smoker_Unknown
+v2_strict_knn_hw_full_dummies,Current Smoker_Yes
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*1
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*11
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*13
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*14
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*2
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*3
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*5
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*1/*6
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*2/*2
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*2/*3
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_*3/*3
+v2_strict_knn_hw_full_dummies,Cyp2C9 genotypes_Unknown
+v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*1
+v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*2_*1/*2
+v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*2_*2/*2
+v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*2_Unknown
+v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*1
+v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*3_*1/*3
+v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*3_*3/*3
+v2_strict_knn_hw_full_dummies,Genotyped QC Cyp2C9*3_Unknown
+v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*1/*1
+v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*1/*2
+v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*1/*3
+v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*2/*2
+v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*2/*3
+v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_*3/*3
+v2_strict_knn_hw_full_dummies,Combined QC CYP2C9_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/A
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_A/G
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -1639 G>A (3673); chr16:31015190; rs9923231; C/T_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_G/T
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_T/T
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 497T>G (5808); chr16:31013055; rs2884737; A/C_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_C/T
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_T/T
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1173 C>T(6484); chr16:31012379; rs9934438; A/G_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_C/G
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 1542G>C (6853); chr16:31012010; rs8050894; C/G_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/A
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_A/G
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 3730 G>A (9041); chr16:31009822; rs7294;  A/G_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_C/T
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_T/T
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: 2255C>T (7566); chr16:31011297; rs2359612; A/G_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/A
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_A/C
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 QC genotype: -4451 C>A (861); Chr16:31018002; rs17880887; A/C_Unknown
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*1
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*11
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*13
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*14
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*2
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*3
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*5
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*1/*6
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*2/*2
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*2/*3
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_*3/*3
+v2_strict_knn_hw_full_dummies,CYP2C9 consensus_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 -1639 consensus_A/A
+v2_strict_knn_hw_full_dummies,VKORC1 -1639 consensus_A/G
+v2_strict_knn_hw_full_dummies,VKORC1 -1639 consensus_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 -1639 consensus_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 497 consensus_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 497 consensus_G/T
+v2_strict_knn_hw_full_dummies,VKORC1 497 consensus_T/T
+v2_strict_knn_hw_full_dummies,VKORC1 497 consensus_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 1173 consensus_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 1173 consensus_C/T
+v2_strict_knn_hw_full_dummies,VKORC1 1173 consensus_T/T
+v2_strict_knn_hw_full_dummies,VKORC1 1173 consensus_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 1542 consensus_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 1542 consensus_C/G
+v2_strict_knn_hw_full_dummies,VKORC1 1542 consensus_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 1542 consensus_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 3730 consensus_A/A
+v2_strict_knn_hw_full_dummies,VKORC1 3730 consensus_A/G
+v2_strict_knn_hw_full_dummies,VKORC1 3730 consensus_G/G
+v2_strict_knn_hw_full_dummies,VKORC1 3730 consensus_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 2255 consensus_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 2255 consensus_C/T
+v2_strict_knn_hw_full_dummies,VKORC1 2255 consensus_T/T
+v2_strict_knn_hw_full_dummies,VKORC1 2255 consensus_Unknown
+v2_strict_knn_hw_full_dummies,VKORC1 -4451 consensus_A/A
+v2_strict_knn_hw_full_dummies,VKORC1 -4451 consensus_A/C
+v2_strict_knn_hw_full_dummies,VKORC1 -4451 consensus_C/C
+v2_strict_knn_hw_full_dummies,VKORC1 -4451 consensus_Unknown
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_10 - 19
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_20 - 29
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_30 - 39
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_40 - 49
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_50 - 59
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_60 - 69
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_70 - 79
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_80 - 89
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_90+
+v2_strict_knn_hw_full_dummies,Age__bucket_unknown_Unknown
+v2_strict_knn_hw_full_dummies,Intercept
