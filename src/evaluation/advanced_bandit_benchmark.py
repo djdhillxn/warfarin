@@ -6,6 +6,8 @@ import pandas as pd
 
 from src.evaluation.bandit_evaluation import evaluate_bandit, summarize_results
 from src.evaluation.feature_set_benchmark import (
+    FINAL_FEATURE_SETS,
+    available_final_feature_sets,
     classwise_metrics,
     confusion_table,
     make_feature_matrix,
@@ -15,12 +17,13 @@ from src.evaluation.feature_set_benchmark import (
 )
 
 
+FINAL_ADVANCED_FEATURE_SETS = FINAL_FEATURE_SETS[:2]
+
 DEFAULT_TS_GRID = [
     {'lambda_reg': 5.0, 'sample_scale': 0.01, 'covariance_type': 'diagonal'},
     {'lambda_reg': 10.0, 'sample_scale': 0.01, 'covariance_type': 'diagonal'},
     {'lambda_reg': 10.0, 'sample_scale': 0.025, 'covariance_type': 'diagonal'},
     {'lambda_reg': 20.0, 'sample_scale': 0.025, 'covariance_type': 'diagonal'},
-    {'lambda_reg': 10.0, 'sample_scale': 0.05, 'covariance_type': 'diagonal'},
 ]
 
 DEFAULT_LASSO_GRID = [
@@ -28,7 +31,6 @@ DEFAULT_LASSO_GRID = [
     {'lasso_alpha': 0.0010, 'ucb_alpha': 0.0, 'lambda_reg': 10.0, 'min_samples_per_arm': 15, 'refit_frequency': 50},
     {'lasso_alpha': 0.0025, 'ucb_alpha': 0.0, 'lambda_reg': 10.0, 'min_samples_per_arm': 20, 'refit_frequency': 50},
     {'lasso_alpha': 0.0010, 'ucb_alpha': 0.025, 'lambda_reg': 10.0, 'min_samples_per_arm': 20, 'refit_frequency': 50},
-    {'lasso_alpha': 0.0025, 'ucb_alpha': 0.025, 'lambda_reg': 10.0, 'min_samples_per_arm': 20, 'refit_frequency': 50},
 ]
 
 
@@ -122,13 +124,14 @@ def evaluate_linear_ts_grid(
     df,
     feature_sets,
     bandit_cls,
-    feature_set_names,
+    feature_set_names=None,
     param_grid=None,
     seeds=range(3),
     standardize=True,
     progress=False,
     verbose=True,
 ):
+    feature_set_names = available_final_feature_sets(feature_sets, feature_set_names or FINAL_ADVANCED_FEATURE_SETS)
     param_grid = list(param_grid or DEFAULT_TS_GRID)
     all_results = []
     all_summaries = []
@@ -176,13 +179,14 @@ def evaluate_lasso_grid(
     df,
     feature_sets,
     bandit_cls,
-    feature_set_names,
+    feature_set_names=None,
     param_grid=None,
     seeds=range(3),
     standardize=True,
     progress=False,
     verbose=True,
 ):
+    feature_set_names = available_final_feature_sets(feature_sets, feature_set_names or FINAL_ADVANCED_FEATURE_SETS)
     param_grid = list(param_grid or DEFAULT_LASSO_GRID)
     all_results = []
     all_summaries = []

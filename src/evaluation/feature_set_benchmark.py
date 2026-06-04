@@ -15,11 +15,15 @@ V2_OUTPUT_DIR = Path('output/preprocess_v2')
 V2_MODELING_TABLE = 'warfarin_preprocess_v2_modeling_table.csv'
 V2_FEATURE_SETS = 'warfarin_preprocess_v2_feature_sets.csv'
 
+FINAL_FEATURE_SETS = [
+    'v2_pharmacogenetic_augmented_regression_hw',
+    'v2_strict_regression_hw_full_dummies',
+    'v2_strict_knn_hw_full_dummies',
+]
 
-HEIGHT_WEIGHT_VARIANTS = {
-    'knn_hw': 'knn_hw',
-    'group_median_hw': 'group_median_hw',
-    'regression_hw': 'regression_hw',
+FINAL_RIDGE_GRID = {
+    'alphas': [0.0, 0.01, 0.025, 0.05, 0.1],
+    'lambda_regs': [5.0, 10.0, 20.0],
 }
 
 
@@ -47,21 +51,25 @@ def load_v2_assets(repo_root=None, output_dir=V2_OUTPUT_DIR):
     return df, feature_sets, output_dir
 
 
+def available_final_feature_sets(feature_sets, requested=None):
+    requested = list(requested or FINAL_FEATURE_SETS)
+    available = set(feature_sets['feature_set'].unique())
+    return [name for name in requested if name in available]
+
+
 def list_feature_sets(feature_sets):
+    order = {name: i for i, name in enumerate(FINAL_FEATURE_SETS)}
     summary = (
         feature_sets.groupby('feature_set')['feature_name']
         .nunique()
         .reset_index(name='n_features')
-        .sort_values(['n_features', 'feature_set'], ascending=[False, True])
-        .reset_index(drop=True)
     )
-    return summary
+    summary['display_order'] = summary['feature_set'].map(order).fillna(999).astype(int)
+    return summary.sort_values(['display_order', 'feature_set']).drop(columns='display_order').reset_index(drop=True)
 
 
 def get_feature_columns(feature_sets, feature_set_name):
-    cols = feature_sets.loc[
-        feature_sets['feature_set'] == feature_set_name, 'feature_name'
-    ].tolist()
+    cols = feature_sets.loc[feature_sets['feature_set'] == feature_set_name, 'feature_name'].tolist()
     if not cols:
         raise ValueError(f'Unknown or empty feature set: {feature_set_name}')
     return cols
@@ -70,10 +78,9 @@ def get_feature_columns(feature_sets, feature_set_name):
 def validate_feature_columns(df, feature_cols, feature_set_name='feature_set'):
     missing = [col for col in feature_cols if col not in df.columns]
     if missing:
-        preview = missing[:10]
         raise KeyError(
             f'{len(missing)} columns from {feature_set_name} are missing in the modeling table. '
-            f'First missing columns: {preview}'
+            f'First missing columns: {missing[:10]}'
         )
 
 
@@ -88,31 +95,18 @@ def standardize_non_binary_features(X_df, skip_cols=None):
     stats = []
 
     for col in X_df.columns:
-        if col in skip_cols:
+        if col in skip_cols or not pd.api.types.is_numeric_dtype(X_df[col]) or is_binary_series(X_df[col]):
             continue
-        if not pd.api.types.is_numeric_dtype(X_df[col]):
-            continue
-        if is_binary_series(X_df[col]):
-            continue
-
         mean = X_df[col].mean()
         std = X_df[col].std(ddof=0)
-        if pd.isna(std) or std == 0:
-            std = 1.0
+        std = 1.0 if pd.isna(std) or std == 0 else std
         X_df[col] = (X_df[col] - mean) / std
         stats.append({'feature': col, 'mean': float(mean), 'std': float(std)})
 
     return X_df, pd.DataFrame(stats)
 
 
-def make_feature_matrix(
-    df,
-    feature_sets,
-    feature_set_name,
-    target_col=TARGET_COL,
-    standardize=True,
-    intercept_candidates=('Intercept', 'intercept'),
-):
+def make_feature_matrix(df, feature_sets, feature_set_name, target_col=TARGET_COL, standardize=True):
     feature_cols = get_feature_columns(feature_sets, feature_set_name)
     validate_feature_columns(df, feature_cols, feature_set_name)
 
@@ -120,35 +114,24 @@ def make_feature_matrix(
     y = df[target_col].astype(int).to_numpy()
 
     if standardize:
-        X_df, scale_stats = standardize_non_binary_features(
-            X_df,
-            skip_cols=[col for col in intercept_candidates if col in X_df.columns],
-        )
+        X_df, scale_stats = standardize_non_binary_features(X_df, skip_cols=['Intercept'])
     else:
         scale_stats = pd.DataFrame(columns=['feature', 'mean', 'std'])
 
-    X = X_df.to_numpy(dtype=float)
-    return X, y, X_df.columns.tolist(), scale_stats
+    return X_df.to_numpy(dtype=float), y, X_df.columns.tolist(), scale_stats
 
 
 def detect_hw_variant(feature_set_name):
-    if 'group_median' in feature_set_name:
-        return 'group_median_hw'
-    if 'regression' in feature_set_name:
-        return 'regression_hw'
-    return 'knn_hw'
+    return 'knn_hw' if 'knn' in feature_set_name else 'regression_hw'
 
 
 def static_policy_predictions(df, feature_set_name):
     variant = detect_hw_variant(feature_set_name)
-    clinical_col = f'Clinical Dose Bucket__{variant}'
-    pgx_col = f'Pharmacogenetic Dose Bucket__{variant}'
-
     predictions = {'Fixed Medium Dose': np.ones(len(df), dtype=int)}
-    if clinical_col in df.columns:
-        predictions[f'Clinical Formula ({variant})'] = df[clinical_col].astype(int).to_numpy()
-    if pgx_col in df.columns:
-        predictions[f'Pharmacogenetic Formula ({variant})'] = df[pgx_col].astype(int).to_numpy()
+    for label in ['Clinical', 'Pharmacogenetic']:
+        col = f'{label} Dose Bucket__{variant}'
+        if col in df.columns:
+            predictions[f'{label} Formula ({variant})'] = df[col].astype(int).to_numpy()
     return predictions
 
 
@@ -170,80 +153,65 @@ def static_policy_summary(df, feature_set_names, target_col=TARGET_COL):
 
 
 def make_linucb_factory(linucb_cls, n_arms, n_features, alpha, lambda_reg):
-    return lambda: linucb_cls(
-        alpha=alpha,
-        n_arms=n_arms,
-        n_features=n_features,
-        lambda_reg=lambda_reg,
-    )
+    return lambda: linucb_cls(alpha=alpha, n_arms=n_arms, n_features=n_features, lambda_reg=lambda_reg)
 
 
 def evaluate_feature_set_grid(
     df,
     feature_sets,
     linucb_cls,
-    feature_set_names,
-    alphas,
-    lambda_regs,
+    feature_set_names=None,
+    alphas=None,
+    lambda_regs=None,
     seeds=range(5),
     standardize=True,
     progress=False,
     verbose=True,
 ):
+    feature_set_names = available_final_feature_sets(feature_sets, feature_set_names)
+    alphas = list(alphas or FINAL_RIDGE_GRID['alphas'])
+    lambda_regs = list(lambda_regs or FINAL_RIDGE_GRID['lambda_regs'])
     seeds = list(seeds)
-    all_summaries = []
-    all_results = []
-    all_scale_stats = []
+    all_summaries, all_results, all_scale_stats = [], [], []
 
     for feature_set_name in feature_set_names:
-        if verbose:
-            print(f'Preparing feature set: {feature_set_name}')
         X, y, feature_cols, scale_stats = make_feature_matrix(
-            df,
-            feature_sets,
-            feature_set_name,
-            standardize=standardize,
+            df, feature_sets, feature_set_name, standardize=standardize
         )
-        n_arms = int(len(np.unique(y)))
-        n_features = int(X.shape[1])
+        n_arms, n_features = int(len(np.unique(y))), int(X.shape[1])
         scale_stats['feature_set'] = feature_set_name
         all_scale_stats.append(scale_stats)
+
+        if verbose:
+            print(f'RidgeLinUCB feature set: {feature_set_name} ({n_features} features)')
 
         for alpha in alphas:
             for lambda_reg in lambda_regs:
                 algorithm = f'RidgeLinUCB(alpha={alpha}, lambda={lambda_reg})'
                 if verbose:
-                    print(f'  Running {algorithm} with {len(seeds)} seeds...')
-                run_results = evaluate_bandit(
+                    print(f'  {algorithm}')
+                result = evaluate_bandit(
                     name=algorithm,
-                    bandit_factory=make_linucb_factory(
-                        linucb_cls=linucb_cls,
-                        n_arms=n_arms,
-                        n_features=n_features,
-                        alpha=alpha,
-                        lambda_reg=lambda_reg,
-                    ),
+                    bandit_factory=make_linucb_factory(linucb_cls, n_arms, n_features, alpha, lambda_reg),
                     X=X,
                     y=y,
                     seeds=seeds,
                     progress=progress,
                 )
-                run_results['feature_set'] = feature_set_name
-                run_results['alpha'] = alpha
-                run_results['lambda_reg'] = lambda_reg
-                run_results['n_features'] = n_features
-                all_results.append(run_results)
+                result['feature_set'] = feature_set_name
+                result['alpha'] = alpha
+                result['lambda_reg'] = lambda_reg
+                result['n_features'] = n_features
+                all_results.append(result)
 
-                summary = summarize_results(run_results)
+                summary = summarize_results(result)
                 summary['feature_set'] = feature_set_name
                 summary['alpha'] = alpha
                 summary['lambda_reg'] = lambda_reg
                 summary['n_features'] = n_features
                 all_summaries.append(summary)
 
-    summary_df = pd.concat(all_summaries, ignore_index=True).sort_values(
-        'final_accuracy_mean', ascending=False
-    )
+    summary_df = pd.concat(all_summaries, ignore_index=True).sort_values('final_accuracy_mean', ascending=False)
     results_df = pd.concat(all_results, ignore_index=True)
     scale_stats_df = pd.concat(all_scale_stats, ignore_index=True) if all_scale_stats else pd.DataFrame()
     return summary_df, results_df, scale_stats_df
@@ -259,11 +227,19 @@ def add_error_columns(results):
     return out
 
 
+def _metric_group_cols(frame):
+    candidates = [
+        'feature_set', 'algorithm_family', 'algorithm', 'config_name',
+        'alpha', 'lambda_reg', 'sample_scale', 'covariance_type',
+        'lasso_alpha', 'ucb_alpha', 'min_samples_per_arm', 'refit_frequency', 'run',
+    ]
+    return [col for col in candidates if col in frame.columns]
+
+
 def summarize_error_metrics(results):
     out = add_error_columns(results)
-    keys = ['feature_set', 'algorithm', 'alpha', 'lambda_reg', 'run']
-    keys = [col for col in keys if col in out.columns]
-    by_run = out.groupby(keys).agg(
+    keys = _metric_group_cols(out)
+    by_run = out.groupby(keys, dropna=False).agg(
         accuracy=('reward', 'mean'),
         error_rate=('regret', 'mean'),
         severe_error_rate=('severe_error', 'mean'),
@@ -273,7 +249,7 @@ def summarize_error_metrics(results):
     ).reset_index()
 
     group_keys = [col for col in keys if col != 'run']
-    summary = by_run.groupby(group_keys).agg(
+    summary = by_run.groupby(group_keys, dropna=False).agg(
         n_runs=('run', 'nunique'),
         accuracy_mean=('accuracy', 'mean'),
         accuracy_std=('accuracy', 'std'),
@@ -290,20 +266,15 @@ def summarize_error_metrics(results):
 
 def classwise_metrics(results, labels=(0, 1, 2), label_names=ARM_LABELS):
     rows = []
-    group_cols = ['feature_set', 'algorithm', 'alpha', 'lambda_reg', 'run']
-    group_cols = [col for col in group_cols if col in results.columns]
+    group_cols = _metric_group_cols(results)
 
     for key, group in results.groupby(group_cols, dropna=False):
-        if not isinstance(key, tuple):
-            key = (key,)
+        key = key if isinstance(key, tuple) else (key,)
         base = dict(zip(group_cols, key))
         y_true = group['true_arm'].astype(int).to_numpy()
         y_pred = group['chosen_arm'].astype(int).to_numpy()
         precision, recall, f1, support = precision_recall_fscore_support(
-            y_true,
-            y_pred,
-            labels=list(labels),
-            zero_division=0,
+            y_true, y_pred, labels=list(labels), zero_division=0
         )
         for i, label in enumerate(labels):
             rows.append({
@@ -318,7 +289,7 @@ def classwise_metrics(results, labels=(0, 1, 2), label_names=ARM_LABELS):
 
     by_run = pd.DataFrame(rows)
     summary_keys = [col for col in group_cols if col != 'run'] + ['class_id', 'class_name']
-    summary = by_run.groupby(summary_keys).agg(
+    summary = by_run.groupby(summary_keys, dropna=False).agg(
         n_runs=('run', 'nunique'),
         precision_mean=('precision', 'mean'),
         precision_std=('precision', 'std'),
@@ -335,12 +306,10 @@ def classwise_metrics(results, labels=(0, 1, 2), label_names=ARM_LABELS):
 
 def confusion_table(results, labels=(0, 1, 2), label_names=ARM_LABELS, normalize='true'):
     rows = []
-    group_cols = ['feature_set', 'algorithm', 'alpha', 'lambda_reg']
-    group_cols = [col for col in group_cols if col in results.columns]
+    group_cols = [col for col in _metric_group_cols(results) if col != 'run']
 
     for key, group in results.groupby(group_cols, dropna=False):
-        if not isinstance(key, tuple):
-            key = (key,)
+        key = key if isinstance(key, tuple) else (key,)
         base = dict(zip(group_cols, key))
         cm = confusion_matrix(
             group['true_arm'].astype(int),
@@ -362,7 +331,7 @@ def confusion_table(results, labels=(0, 1, 2), label_names=ARM_LABELS, normalize
     return pd.DataFrame(rows)
 
 
-def select_top_feature_sets(summary, top_n=3):
+def select_top_feature_sets(summary, top_n=2):
     best = summary.sort_values('final_accuracy_mean', ascending=False)
     return best.drop_duplicates('feature_set').head(top_n)['feature_set'].tolist()
 
@@ -382,7 +351,7 @@ def save_benchmark_outputs(output_dir, **tables):
     return written
 
 
-def plot_feature_set_accuracy(summary, top_n=None, title='Feature-set RidgeLinUCB comparison'):
+def plot_feature_set_accuracy(summary, top_n=None, title='RidgeLinUCB feature-set comparison'):
     plot_df = summary.sort_values('final_accuracy_mean', ascending=False).copy()
     if top_n:
         plot_df = plot_df.head(top_n)
