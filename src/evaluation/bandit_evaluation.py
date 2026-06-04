@@ -66,6 +66,16 @@ def run_bandit_once(
     return pd.DataFrame(records)
 
 
+def _make_bandit_from_factory(bandit_factory, seed, run_id):
+    signature = inspect.signature(bandit_factory)
+    kwargs = {}
+    if 'seed' in signature.parameters:
+        kwargs['seed'] = seed
+    if 'run_id' in signature.parameters:
+        kwargs['run_id'] = run_id
+    return bandit_factory(**kwargs) if kwargs else bandit_factory()
+
+
 def evaluate_bandit(
     name,
     bandit_factory,
@@ -79,7 +89,7 @@ def evaluate_bandit(
 
     runs = []
     for run_id, seed in enumerate(seeds):
-        bandit = bandit_factory()
+        bandit = _make_bandit_from_factory(bandit_factory, seed, run_id)
         runs.append(
             run_bandit_once(
                 bandit=bandit,
