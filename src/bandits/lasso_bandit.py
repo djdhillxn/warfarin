@@ -9,7 +9,7 @@ class LassoUCBBandit:
     Practical LASSO + UCB contextual bandit for sparse/high-dimensional features.
 
     This class is intentionally designed for the warfarin simulation setting:
-    rewards are binary correctness rewards, each arm has its own sparse linear
+    rewards are scalar online feedback values, each arm has its own sparse linear
     model, and the LASSO-selected active set is used to compute a compact ridge
     uncertainty bonus.
 

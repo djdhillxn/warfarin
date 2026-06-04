@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import confusion_matrix, precision_recall_fscore_support
 
-from src.evaluation.bandit_evaluation import evaluate_bandit, summarize_results
+from src.evaluation.bandit_evaluation import compute_reward, evaluate_bandit, summarize_results
 
 
 TARGET_COL = 'Therapeutic Dose of Warfarin'
@@ -25,6 +25,8 @@ FINAL_RIDGE_GRID = {
     'alphas': [0.0, 0.01, 0.025, 0.05, 0.1],
     'lambda_regs': [5.0, 10.0, 20.0],
 }
+
+REWARD_SCHEMES_TO_COMPARE = ['binary', 'ordinal']
 
 
 def resolve_repo_root(start=None):
@@ -141,11 +143,13 @@ def static_policy_summary(df, feature_set_names, target_col=TARGET_COL):
     for feature_set_name in feature_set_names:
         for policy, pred in static_policy_predictions(df, feature_set_name).items():
             correct = pred == y
+            ordinal_rewards = [compute_reward(p, t, reward_scheme='ordinal') for p, t in zip(pred, y)]
             rows.append({
                 'feature_set': feature_set_name,
                 'algorithm': policy,
                 'accuracy': float(correct.mean()),
                 'fraction_incorrect': float(1.0 - correct.mean()),
+                'mean_ordinal_reward': float(np.mean(ordinal_rewards)),
                 'n_correct': int(correct.sum()),
                 'n_total': int(len(y)),
             })
@@ -164,6 +168,7 @@ def evaluate_feature_set_grid(
     alphas=None,
     lambda_regs=None,
     seeds=range(5),
+    reward_scheme='binary',
     standardize=True,
     progress=False,
     verbose=True,
@@ -180,10 +185,11 @@ def evaluate_feature_set_grid(
         )
         n_arms, n_features = int(len(np.unique(y))), int(X.shape[1])
         scale_stats['feature_set'] = feature_set_name
+        scale_stats['reward_scheme'] = str(reward_scheme)
         all_scale_stats.append(scale_stats)
 
         if verbose:
-            print(f'RidgeLinUCB feature set: {feature_set_name} ({n_features} features)')
+            print(f'RidgeLinUCB feature set: {feature_set_name} ({n_features} features), reward={reward_scheme}')
 
         for alpha in alphas:
             for lambda_reg in lambda_regs:
@@ -196,6 +202,7 @@ def evaluate_feature_set_grid(
                     X=X,
                     y=y,
                     seeds=seeds,
+                    reward_scheme=reward_scheme,
                     progress=progress,
                 )
                 result['feature_set'] = feature_set_name
@@ -217,6 +224,33 @@ def evaluate_feature_set_grid(
     return summary_df, results_df, scale_stats_df
 
 
+def evaluate_feature_set_grid_for_rewards(
+    df,
+    feature_sets,
+    linucb_cls,
+    reward_schemes=None,
+    **kwargs,
+):
+    reward_schemes = list(reward_schemes or REWARD_SCHEMES_TO_COMPARE)
+    summaries, results, scale_stats = [], [], []
+    for reward_scheme in reward_schemes:
+        summary, result, scale = evaluate_feature_set_grid(
+            df=df,
+            feature_sets=feature_sets,
+            linucb_cls=linucb_cls,
+            reward_scheme=reward_scheme,
+            **kwargs,
+        )
+        summaries.append(summary)
+        results.append(result)
+        scale_stats.append(scale)
+    return (
+        pd.concat(summaries, ignore_index=True).sort_values('final_accuracy_mean', ascending=False),
+        pd.concat(results, ignore_index=True),
+        pd.concat(scale_stats, ignore_index=True) if scale_stats else pd.DataFrame(),
+    )
+
+
 def add_error_columns(results):
     out = results.copy()
     out['absolute_error'] = (out['chosen_arm'] - out['true_arm']).abs()
@@ -224,12 +258,14 @@ def add_error_columns(results):
     out['one_step_error'] = (out['absolute_error'] == 1).astype(int)
     out['underdose_error'] = (out['chosen_arm'] < out['true_arm']).astype(int)
     out['overdose_error'] = (out['chosen_arm'] > out['true_arm']).astype(int)
+    if 'is_correct' not in out.columns:
+        out['is_correct'] = (out['chosen_arm'] == out['true_arm']).astype(int)
     return out
 
 
 def _metric_group_cols(frame):
     candidates = [
-        'feature_set', 'algorithm_family', 'algorithm', 'config_name',
+        'feature_set', 'algorithm_family', 'algorithm', 'config_name', 'reward_scheme',
         'alpha', 'lambda_reg', 'sample_scale', 'covariance_type',
         'lasso_alpha', 'ucb_alpha', 'min_samples_per_arm', 'refit_frequency', 'run',
     ]
@@ -240,8 +276,10 @@ def summarize_error_metrics(results):
     out = add_error_columns(results)
     keys = _metric_group_cols(out)
     by_run = out.groupby(keys, dropna=False).agg(
-        accuracy=('reward', 'mean'),
-        error_rate=('regret', 'mean'),
+        accuracy=('is_correct', 'mean'),
+        mean_reward=('reward', 'mean'),
+        error_rate=('is_correct', lambda s: 1.0 - float(np.mean(s))),
+        mean_regret=('regret', 'mean'),
         severe_error_rate=('severe_error', 'mean'),
         one_step_error_rate=('one_step_error', 'mean'),
         underdose_rate=('underdose_error', 'mean'),
@@ -253,6 +291,10 @@ def summarize_error_metrics(results):
         n_runs=('run', 'nunique'),
         accuracy_mean=('accuracy', 'mean'),
         accuracy_std=('accuracy', 'std'),
+        mean_reward_mean=('mean_reward', 'mean'),
+        mean_reward_std=('mean_reward', 'std'),
+        mean_regret_mean=('mean_regret', 'mean'),
+        mean_regret_std=('mean_regret', 'std'),
         severe_error_rate_mean=('severe_error_rate', 'mean'),
         severe_error_rate_std=('severe_error_rate', 'std'),
         one_step_error_rate_mean=('one_step_error_rate', 'mean'),
@@ -260,6 +302,7 @@ def summarize_error_metrics(results):
         overdose_rate_mean=('overdose_rate', 'mean'),
     ).reset_index()
     summary['accuracy_ci95'] = 1.96 * summary['accuracy_std'].fillna(0) / np.sqrt(summary['n_runs'])
+    summary['mean_reward_ci95'] = 1.96 * summary['mean_reward_std'].fillna(0) / np.sqrt(summary['n_runs'])
     summary['severe_error_rate_ci95'] = 1.96 * summary['severe_error_rate_std'].fillna(0) / np.sqrt(summary['n_runs'])
     return summary.sort_values('accuracy_mean', ascending=False)
 
@@ -356,6 +399,8 @@ def plot_feature_set_accuracy(summary, top_n=None, title='RidgeLinUCB feature-se
     if top_n:
         plot_df = plot_df.head(top_n)
     labels = plot_df['feature_set'] + '\nα=' + plot_df['alpha'].astype(str) + ', λ=' + plot_df['lambda_reg'].astype(str)
+    if 'reward_scheme' in plot_df.columns:
+        labels = labels + ', reward=' + plot_df['reward_scheme'].astype(str)
 
     fig, ax = plt.subplots(figsize=(12, max(5, 0.5 * len(plot_df))))
     ax.barh(np.arange(len(plot_df)), plot_df['final_accuracy_mean'])

@@ -7,6 +7,7 @@ import pandas as pd
 from src.evaluation.bandit_evaluation import evaluate_bandit, summarize_results
 from src.evaluation.feature_set_benchmark import (
     FINAL_FEATURE_SETS,
+    REWARD_SCHEMES_TO_COMPARE,
     available_final_feature_sets,
     classwise_metrics,
     confusion_table,
@@ -109,7 +110,7 @@ def _attach_common_metadata(result, feature_set_name, params, n_features, algori
 
 def _summarize_with_metadata(result):
     meta_cols = [
-        'feature_set', 'algorithm_family', 'config_name', 'n_features',
+        'feature_set', 'algorithm_family', 'config_name', 'reward_scheme', 'n_features',
         'lambda_reg', 'sample_scale', 'covariance_type',
         'lasso_alpha', 'ucb_alpha', 'min_samples_per_arm', 'refit_frequency',
     ]
@@ -127,6 +128,7 @@ def evaluate_linear_ts_grid(
     feature_set_names=None,
     param_grid=None,
     seeds=range(3),
+    reward_scheme='binary',
     standardize=True,
     progress=False,
     verbose=True,
@@ -144,10 +146,11 @@ def evaluate_linear_ts_grid(
         n_arms = int(len(np.unique(y)))
         n_features = int(X.shape[1])
         scale_stats['feature_set'] = feature_set_name
+        scale_stats['reward_scheme'] = str(reward_scheme)
         all_scale_stats.append(scale_stats)
 
         if verbose:
-            print(f'LinearTS feature set: {feature_set_name} ({n_features} features)')
+            print(f'LinearTS feature set: {feature_set_name} ({n_features} features), reward={reward_scheme}')
 
         for params in param_grid:
             config_name = ts_config_name(params)
@@ -159,6 +162,7 @@ def evaluate_linear_ts_grid(
                 X=X,
                 y=y,
                 seeds=seeds,
+                reward_scheme=reward_scheme,
                 progress=progress,
             )
             result = _attach_common_metadata(
@@ -182,6 +186,7 @@ def evaluate_lasso_grid(
     feature_set_names=None,
     param_grid=None,
     seeds=range(3),
+    reward_scheme='binary',
     standardize=True,
     progress=False,
     verbose=True,
@@ -200,10 +205,11 @@ def evaluate_lasso_grid(
         n_features = int(X.shape[1])
         intercept_index = get_intercept_index(feature_cols)
         scale_stats['feature_set'] = feature_set_name
+        scale_stats['reward_scheme'] = str(reward_scheme)
         all_scale_stats.append(scale_stats)
 
         if verbose:
-            print(f'LassoLinUCB feature set: {feature_set_name} ({n_features} features)')
+            print(f'LassoLinUCB feature set: {feature_set_name} ({n_features} features), reward={reward_scheme}')
 
         for params in param_grid:
             config_name = lasso_config_name(params)
@@ -217,6 +223,7 @@ def evaluate_lasso_grid(
                 X=X,
                 y=y,
                 seeds=seeds,
+                reward_scheme=reward_scheme,
                 progress=progress,
             )
             result = _attach_common_metadata(
@@ -232,6 +239,34 @@ def evaluate_lasso_grid(
     )
     scale_stats_df = pd.concat(all_scale_stats, ignore_index=True) if all_scale_stats else pd.DataFrame()
     return summary_df, results_df, scale_stats_df
+
+
+def evaluate_advanced_grid_for_rewards(
+    evaluator,
+    df,
+    feature_sets,
+    bandit_cls,
+    reward_schemes=None,
+    **kwargs,
+):
+    reward_schemes = list(reward_schemes or REWARD_SCHEMES_TO_COMPARE)
+    summaries, results, scale_stats = [], [], []
+    for reward_scheme in reward_schemes:
+        summary, result, scale = evaluator(
+            df=df,
+            feature_sets=feature_sets,
+            bandit_cls=bandit_cls,
+            reward_scheme=reward_scheme,
+            **kwargs,
+        )
+        summaries.append(summary)
+        results.append(result)
+        scale_stats.append(scale)
+    return (
+        pd.concat(summaries, ignore_index=True).sort_values('final_accuracy_mean', ascending=False),
+        pd.concat(results, ignore_index=True),
+        pd.concat(scale_stats, ignore_index=True) if scale_stats else pd.DataFrame(),
+    )
 
 
 def combine_advanced_results(*result_frames):
@@ -283,6 +318,8 @@ def load_top_feature_sets_from_ridge_results(path, top_n=3):
 def plot_advanced_leaderboard(summary, top_n=20, title='Advanced contextual bandit leaderboard'):
     plot_df = summary.sort_values('final_accuracy_mean', ascending=False).head(top_n).copy()
     labels = plot_df['algorithm_family'] + '\n' + plot_df['feature_set'] + '\n' + plot_df['config_name']
+    if 'reward_scheme' in plot_df.columns:
+        labels = labels + '\nreward=' + plot_df['reward_scheme'].astype(str)
 
     fig, ax = plt.subplots(figsize=(13, max(6, 0.6 * len(plot_df))))
     ax.barh(np.arange(len(plot_df)), plot_df['final_accuracy_mean'])
