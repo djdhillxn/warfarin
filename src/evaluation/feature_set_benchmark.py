@@ -16,7 +16,6 @@ V2_MODELING_TABLE = 'warfarin_preprocess_v2_modeling_table.csv'
 V2_FEATURE_SETS = 'warfarin_preprocess_v2_feature_sets.csv'
 
 FINAL_FEATURE_SETS = [
-    'v2_pharmacogenetic_augmented_regression_hw',
     'v2_strict_regression_hw_full_dummies',
     'v2_strict_knn_hw_full_dummies',
 ]
@@ -25,6 +24,17 @@ FINAL_RIDGE_GRID = {
     'alphas': [0.0, 0.01, 0.025, 0.05, 0.1],
     'lambda_regs': [5.0, 10.0, 20.0],
 }
+
+FINAL_HYBRID_GRID = [
+    {'alpha': 0.0, 'lambda_arm': 10.0, 'lambda_shared': 10.0, 'alpha_shared': 0.0, 'shared_weight': 0.5},
+    {'alpha': 0.0, 'lambda_arm': 10.0, 'lambda_shared': 20.0, 'alpha_shared': 0.0, 'shared_weight': 0.5},
+    {'alpha': 0.01, 'lambda_arm': 10.0, 'lambda_shared': 10.0, 'alpha_shared': 0.01, 'shared_weight': 0.5},
+    {'alpha': 0.01, 'lambda_arm': 10.0, 'lambda_shared': 20.0, 'alpha_shared': 0.01, 'shared_weight': 0.5},
+    {'alpha': 0.025, 'lambda_arm': 10.0, 'lambda_shared': 10.0, 'alpha_shared': 0.025, 'shared_weight': 0.5},
+    {'alpha': 0.01, 'lambda_arm': 20.0, 'lambda_shared': 10.0, 'alpha_shared': 0.01, 'shared_weight': 0.5},
+    {'alpha': 0.01, 'lambda_arm': 10.0, 'lambda_shared': 10.0, 'alpha_shared': 0.01, 'shared_weight': 1.0},
+    {'alpha': 0.025, 'lambda_arm': 10.0, 'lambda_shared': 20.0, 'alpha_shared': 0.025, 'shared_weight': 1.0},
+]
 
 REWARD_SCHEMES_TO_COMPARE = ['binary', 'ordinal']
 
@@ -128,13 +138,7 @@ def detect_hw_variant(feature_set_name):
 
 
 def static_policy_predictions(df, feature_set_name):
-    variant = detect_hw_variant(feature_set_name)
-    predictions = {'Fixed Medium Dose': np.ones(len(df), dtype=int)}
-    for label in ['Clinical', 'Pharmacogenetic']:
-        col = f'{label} Dose Bucket__{variant}'
-        if col in df.columns:
-            predictions[f'{label} Formula ({variant})'] = df[col].astype(int).to_numpy()
-    return predictions
+    return {'Fixed Medium Dose': np.ones(len(df), dtype=int)}
 
 
 def static_policy_summary(df, feature_set_names, target_col=TARGET_COL):
@@ -251,6 +255,128 @@ def evaluate_feature_set_grid_for_rewards(
     )
 
 
+
+def short_float(value):
+    return f'{float(value):g}'
+
+
+def hybrid_config_name(params):
+    return (
+        'HybridRidgeLinUCB('
+        f"alpha={short_float(params.get('alpha'))}, "
+        f"lambda_arm={short_float(params.get('lambda_arm'))}, "
+        f"lambda_shared={short_float(params.get('lambda_shared'))}, "
+        f"alpha_shared={short_float(params.get('alpha_shared'))}, "
+        f"shared_weight={short_float(params.get('shared_weight', 1.0))}"
+        ')'
+    )
+
+
+def make_hybrid_linucb_factory(hybrid_cls, n_arms, n_features, params):
+    return lambda: hybrid_cls(
+        alpha=params.get('alpha', 0.01),
+        n_arms=n_arms,
+        n_features=n_features,
+        lambda_arm=params.get('lambda_arm', 10.0),
+        lambda_shared=params.get('lambda_shared', 10.0),
+        alpha_shared=params.get('alpha_shared', params.get('alpha', 0.01)),
+        shared_weight=params.get('shared_weight', 1.0),
+    )
+
+
+def evaluate_hybrid_feature_set_grid(
+    df,
+    feature_sets,
+    hybrid_cls,
+    feature_set_names=None,
+    param_grid=None,
+    seeds=range(5),
+    reward_scheme='binary',
+    standardize=True,
+    progress=False,
+    verbose=True,
+):
+    feature_set_names = available_final_feature_sets(feature_sets, feature_set_names)
+    param_grid = list(param_grid or FINAL_HYBRID_GRID)
+    seeds = list(seeds)
+    all_summaries, all_results, all_scale_stats = [], [], []
+
+    for feature_set_name in feature_set_names:
+        X, y, feature_cols, scale_stats = make_feature_matrix(
+            df, feature_sets, feature_set_name, standardize=standardize
+        )
+        n_arms, n_features = int(len(np.unique(y))), int(X.shape[1])
+        scale_stats['feature_set'] = feature_set_name
+        scale_stats['reward_scheme'] = str(reward_scheme)
+        scale_stats['algorithm_family'] = 'Hybrid RidgeLinUCB'
+        all_scale_stats.append(scale_stats)
+
+        if verbose:
+            print(f'Hybrid RidgeLinUCB feature set: {feature_set_name} ({n_features} features), reward={reward_scheme}')
+
+        for params in param_grid:
+            algorithm = hybrid_config_name(params)
+            if verbose:
+                print(f'  {algorithm}')
+            result = evaluate_bandit(
+                name=algorithm,
+                bandit_factory=make_hybrid_linucb_factory(hybrid_cls, n_arms, n_features, params),
+                X=X,
+                y=y,
+                seeds=seeds,
+                reward_scheme=reward_scheme,
+                progress=progress,
+            )
+            result['feature_set'] = feature_set_name
+            result['algorithm_family'] = 'Hybrid RidgeLinUCB'
+            result['config_name'] = algorithm
+            result['n_features'] = n_features
+            for key, value in params.items():
+                result[key] = value
+            all_results.append(result)
+
+            summary = summarize_results(result)
+            summary['feature_set'] = feature_set_name
+            summary['algorithm_family'] = 'Hybrid RidgeLinUCB'
+            summary['config_name'] = algorithm
+            summary['n_features'] = n_features
+            for key, value in params.items():
+                summary[key] = value
+            all_summaries.append(summary)
+
+    summary_df = pd.concat(all_summaries, ignore_index=True).sort_values('final_accuracy_mean', ascending=False)
+    results_df = pd.concat(all_results, ignore_index=True)
+    scale_stats_df = pd.concat(all_scale_stats, ignore_index=True) if all_scale_stats else pd.DataFrame()
+    return summary_df, results_df, scale_stats_df
+
+
+def evaluate_hybrid_feature_set_grid_for_rewards(
+    df,
+    feature_sets,
+    hybrid_cls,
+    reward_schemes=None,
+    **kwargs,
+):
+    reward_schemes = list(reward_schemes or REWARD_SCHEMES_TO_COMPARE)
+    summaries, results, scale_stats = [], [], []
+    for reward_scheme in reward_schemes:
+        summary, result, scale = evaluate_hybrid_feature_set_grid(
+            df=df,
+            feature_sets=feature_sets,
+            hybrid_cls=hybrid_cls,
+            reward_scheme=reward_scheme,
+            **kwargs,
+        )
+        summaries.append(summary)
+        results.append(result)
+        scale_stats.append(scale)
+    return (
+        pd.concat(summaries, ignore_index=True).sort_values('final_accuracy_mean', ascending=False),
+        pd.concat(results, ignore_index=True),
+        pd.concat(scale_stats, ignore_index=True) if scale_stats else pd.DataFrame(),
+    )
+
+
 def add_error_columns(results):
     out = results.copy()
     out['absolute_error'] = (out['chosen_arm'] - out['true_arm']).abs()
@@ -266,7 +392,8 @@ def add_error_columns(results):
 def _metric_group_cols(frame):
     candidates = [
         'feature_set', 'algorithm_family', 'algorithm', 'config_name', 'reward_scheme',
-        'alpha', 'lambda_reg', 'sample_scale', 'covariance_type',
+        'alpha', 'lambda_reg', 'lambda_arm', 'lambda_shared', 'alpha_shared', 'shared_weight',
+        'sample_scale', 'covariance_type',
         'lasso_alpha', 'ucb_alpha', 'min_samples_per_arm', 'refit_frequency', 'run',
     ]
     return [col for col in candidates if col in frame.columns]
@@ -379,12 +506,14 @@ def select_top_feature_sets(summary, top_n=2):
     return best.drop_duplicates('feature_set').head(top_n)['feature_set'].tolist()
 
 
-def save_benchmark_outputs(output_dir, **tables):
+def save_benchmark_outputs(output_dir, save_step_results=False, **tables):
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     written = {}
     for name, table in tables.items():
         if table is None or len(table) == 0:
+            continue
+        if not save_step_results and name.endswith(('_results', '_step_results')):
             continue
         path = output_dir / f'{name}.csv'
         table.to_csv(path, index=False)
@@ -398,11 +527,16 @@ def plot_feature_set_accuracy(summary, top_n=None, title='RidgeLinUCB feature-se
     plot_df = summary.sort_values('final_accuracy_mean', ascending=False).copy()
     if top_n:
         plot_df = plot_df.head(top_n)
-    labels = plot_df['feature_set'] + '\nα=' + plot_df['alpha'].astype(str) + ', λ=' + plot_df['lambda_reg'].astype(str)
-    if 'reward_scheme' in plot_df.columns:
-        labels = labels + ', reward=' + plot_df['reward_scheme'].astype(str)
 
-    fig, ax = plt.subplots(figsize=(12, max(5, 0.5 * len(plot_df))))
+    if 'config_name' in plot_df.columns:
+        family = plot_df['algorithm_family'].fillna('RidgeLinUCB') if 'algorithm_family' in plot_df.columns else 'RidgeLinUCB'
+        labels = family.astype(str) + '\n' + plot_df['feature_set'].astype(str) + '\n' + plot_df['config_name'].astype(str)
+    else:
+        labels = plot_df['feature_set'] + '\nα=' + plot_df['alpha'].astype(str) + ', λ=' + plot_df['lambda_reg'].astype(str)
+    if 'reward_scheme' in plot_df.columns:
+        labels = labels + '\nreward=' + plot_df['reward_scheme'].astype(str)
+
+    fig, ax = plt.subplots(figsize=(12, max(5, 0.55 * len(plot_df))))
     ax.barh(np.arange(len(plot_df)), plot_df['final_accuracy_mean'])
     ax.set_yticks(np.arange(len(plot_df)))
     ax.set_yticklabels(labels)

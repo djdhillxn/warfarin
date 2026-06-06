@@ -18,23 +18,13 @@ from src.evaluation.feature_set_benchmark import (
 )
 
 
-FINAL_ADVANCED_FEATURE_SETS = FINAL_FEATURE_SETS[:2]
+FINAL_ADVANCED_FEATURE_SETS = FINAL_FEATURE_SETS
 
 DEFAULT_TS_GRID = [
-    # Fast diagonal posterior approximation.
     {'lambda_reg': 5.0, 'sample_scale': 0.01, 'covariance_type': 'diagonal'},
     {'lambda_reg': 10.0, 'sample_scale': 0.01, 'covariance_type': 'diagonal'},
     {'lambda_reg': 10.0, 'sample_scale': 0.025, 'covariance_type': 'diagonal'},
     {'lambda_reg': 20.0, 'sample_scale': 0.025, 'covariance_type': 'diagonal'},
-
-    # Full posterior covariance. This samples correlated coefficient noise using
-    # the full A_inv matrix instead of only its diagonal. The scales are kept
-    # conservative because full covariance can explore more coherently.
-    {'lambda_reg': 10.0, 'sample_scale': 0.005, 'covariance_type': 'full'},
-    {'lambda_reg': 10.0, 'sample_scale': 0.01, 'covariance_type': 'full'},
-    {'lambda_reg': 10.0, 'sample_scale': 0.025, 'covariance_type': 'full'},
-    {'lambda_reg': 20.0, 'sample_scale': 0.01, 'covariance_type': 'full'},
-    {'lambda_reg': 20.0, 'sample_scale': 0.025, 'covariance_type': 'full'},
 ]
 
 DEFAULT_LASSO_GRID = [
@@ -296,7 +286,7 @@ def advanced_confusion_table(results, normalize='true'):
     return confusion_table(results, normalize=normalize)
 
 
-def save_advanced_benchmark(output_dir, prefix, summary, results, scale_stats=None):
+def save_advanced_benchmark(output_dir, prefix, summary, results, scale_stats=None, save_step_results=False):
     output_dir = Path(output_dir)
     error_summary = summarize_advanced_errors(results)
     classwise = classwise_advanced_metrics(results)
@@ -307,13 +297,14 @@ def save_advanced_benchmark(output_dir, prefix, summary, results, scale_stats=No
         output_dir,
         **{
             f'{prefix}_summary': summary,
-            f'{prefix}_results': results,
+            f'{prefix}_results': results if save_step_results else None,
             f'{prefix}_error_summary': error_summary,
             f'{prefix}_classwise': classwise,
             f'{prefix}_confusion_true_normalized': confusion_true,
             f'{prefix}_confusion_counts': confusion_counts,
             f'{prefix}_scale_stats': scale_stats,
         },
+        save_step_results=save_step_results,
     )
 
 
