@@ -337,6 +337,223 @@ def save_coefficient_audit(output_dir, prefix, audit, save_full_coefficients=Tru
     return save_benchmark_outputs(output_dir, save_step_results=save_run, **tables)
 
 
+def coefficient_model_card(coef_long, zero_tolerance=1e-12, top_n=10):
+    """Build arm-level sparsity, ranking, and support tables from saved coefficients."""
+    required = {
+        'algorithm',
+        'feature_set',
+        'reward_scheme',
+        'coefficient_mode',
+        'arm_id',
+        'arm_name',
+        'feature_index',
+        'feature',
+        'coefficient',
+        'feature_group',
+    }
+    missing = required.difference(coef_long.columns)
+    if missing:
+        raise ValueError(f'Coefficient table is missing required columns: {sorted(missing)}')
+    if zero_tolerance < 0:
+        raise ValueError('zero_tolerance must be non-negative.')
+    if top_n < 1:
+        raise ValueError('top_n must be at least 1.')
+
+    frame = coef_long.copy()
+    frame['coefficient'] = pd.to_numeric(frame['coefficient'], errors='raise')
+    frame['abs_coefficient'] = frame['coefficient'].abs()
+    frame['is_nonzero'] = frame['abs_coefficient'] > float(zero_tolerance)
+    frame['is_positive'] = frame['coefficient'] > float(zero_tolerance)
+    frame['is_negative'] = frame['coefficient'] < -float(zero_tolerance)
+
+    group_cols = [
+        'algorithm',
+        'feature_set',
+        'reward_scheme',
+        'coefficient_mode',
+        'arm_id',
+        'arm_name',
+    ]
+    summary = (
+        frame.groupby(group_cols, dropna=False)
+        .agg(
+            n_features=('feature', 'size'),
+            n_nonzero=('is_nonzero', 'sum'),
+            n_positive=('is_positive', 'sum'),
+            n_negative=('is_negative', 'sum'),
+            l1_norm=('abs_coefficient', 'sum'),
+            l2_norm=('coefficient', lambda values: float(np.linalg.norm(values.to_numpy(dtype=float)))),
+            max_abs_coefficient=('abs_coefficient', 'max'),
+        )
+        .reset_index()
+    )
+    summary['n_zero'] = summary['n_features'] - summary['n_nonzero']
+    summary['nonzero_fraction'] = summary['n_nonzero'] / summary['n_features']
+    summary['zero_tolerance'] = float(zero_tolerance)
+
+    strongest_positive = (
+        frame[frame['is_positive']]
+        .sort_values(group_cols + ['coefficient'], ascending=[True] * len(group_cols) + [False])
+        .groupby(group_cols, dropna=False)
+        .head(1)[group_cols + ['feature', 'coefficient']]
+        .rename(columns={
+            'feature': 'strongest_positive_feature',
+            'coefficient': 'strongest_positive_coefficient',
+        })
+    )
+    strongest_negative = (
+        frame[frame['is_negative']]
+        .sort_values(group_cols + ['coefficient'], ascending=[True] * len(group_cols) + [True])
+        .groupby(group_cols, dropna=False)
+        .head(1)[group_cols + ['feature', 'coefficient']]
+        .rename(columns={
+            'feature': 'strongest_negative_feature',
+            'coefficient': 'strongest_negative_coefficient',
+        })
+    )
+    summary = (
+        summary.merge(strongest_positive, how='left', on=group_cols)
+        .merge(strongest_negative, how='left', on=group_cols)
+        .sort_values(['algorithm', 'feature_set', 'arm_id'])
+        .reset_index(drop=True)
+    )
+
+    ranked_tables = []
+    for direction, mask, ascending in [
+        ('positive', frame['is_positive'], False),
+        ('negative', frame['is_negative'], True),
+    ]:
+        ranked = frame[mask].sort_values(
+            group_cols + ['coefficient'],
+            ascending=[True] * len(group_cols) + [ascending],
+        )
+        ranked = ranked.groupby(group_cols, dropna=False).head(top_n).copy()
+        ranked['direction'] = direction
+        ranked['rank'] = ranked.groupby(group_cols, dropna=False).cumcount() + 1
+        ranked_tables.append(ranked)
+
+    top_weights = pd.concat(ranked_tables, ignore_index=True)
+    top_weights = top_weights[
+        group_cols
+        + ['direction', 'rank', 'feature_index', 'feature', 'feature_group', 'coefficient', 'abs_coefficient']
+    ].sort_values(['algorithm', 'feature_set', 'arm_id', 'direction', 'rank'])
+
+    index_cols = [
+        'algorithm',
+        'feature_set',
+        'reward_scheme',
+        'coefficient_mode',
+        'feature_index',
+        'feature',
+        'feature_group',
+    ]
+    wide = frame.pivot_table(
+        index=index_cols,
+        columns='arm_name',
+        values='coefficient',
+        aggfunc='first',
+    ).reset_index()
+    wide.columns.name = None
+
+    arm_names = [
+        arm_name
+        for _, arm_name in (
+            frame[['arm_id', 'arm_name']]
+            .drop_duplicates()
+            .sort_values('arm_id')
+            .itertuples(index=False, name=None)
+        )
+    ]
+    coefficient_cols = []
+    nonzero_cols = []
+    for arm_name in arm_names:
+        coefficient_col = f'{arm_name}_coefficient'
+        nonzero_col = f'{arm_name}_nonzero'
+        wide = wide.rename(columns={arm_name: coefficient_col})
+        wide[nonzero_col] = wide[coefficient_col].abs() > float(zero_tolerance)
+        coefficient_cols.append(coefficient_col)
+        nonzero_cols.append(nonzero_col)
+
+    wide['n_nonzero_arms'] = wide[nonzero_cols].sum(axis=1)
+    wide['nonzero_arm_pattern'] = wide.apply(
+        lambda row: '+'.join(
+            arm_name
+            for arm_name, nonzero_col in zip(arm_names, nonzero_cols)
+            if bool(row[nonzero_col])
+        ) or 'none',
+        axis=1,
+    )
+    wide['max_abs_coefficient'] = wide[coefficient_cols].abs().max(axis=1)
+    wide['zero_tolerance'] = float(zero_tolerance)
+    wide = wide[
+        index_cols
+        + coefficient_cols
+        + nonzero_cols
+        + ['n_nonzero_arms', 'nonzero_arm_pattern', 'max_abs_coefficient', 'zero_tolerance']
+    ]
+    wide = wide.sort_values(
+        ['max_abs_coefficient', 'feature_index'],
+        ascending=[False, True],
+    ).reset_index(drop=True)
+
+    support_patterns = (
+        wide.groupby(['nonzero_arm_pattern', 'n_nonzero_arms'], dropna=False)
+        .agg(n_features=('feature', 'size'))
+        .reset_index()
+        .sort_values(['n_nonzero_arms', 'n_features', 'nonzero_arm_pattern'], ascending=[False, False, True])
+        .reset_index(drop=True)
+    )
+    support_patterns['zero_tolerance'] = float(zero_tolerance)
+
+    return {
+        'summary': summary,
+        'top_weights': top_weights.reset_index(drop=True),
+        'coefficients_wide': wide,
+        'support_patterns': support_patterns,
+    }
+
+
+def hybrid_shared_model_card(shared_coefficients, zero_tolerance=1e-12, top_n=10):
+    """Build the same model card for a HybridRidgeLinUCB shared coefficient vector."""
+    required = {
+        'algorithm',
+        'feature_set',
+        'reward_scheme',
+        'feature_index',
+        'feature',
+        'shared_coefficient',
+        'feature_group',
+    }
+    missing = required.difference(shared_coefficients.columns)
+    if missing:
+        raise ValueError(f'Hybrid shared coefficient table is missing required columns: {sorted(missing)}')
+
+    normalized = shared_coefficients.copy().rename(columns={'shared_coefficient': 'coefficient'})
+    normalized['coefficient_mode'] = 'shared_ordinal'
+    normalized['arm_id'] = -1
+    normalized['arm_name'] = 'shared_ordinal'
+    return coefficient_model_card(
+        normalized,
+        zero_tolerance=zero_tolerance,
+        top_n=top_n,
+    )
+
+
+def save_coefficient_model_card(output_dir, prefix, model_card):
+    """Save model-card tables without overwriting benchmark output metadata."""
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    paths = {}
+    for table_name in ['summary', 'top_weights', 'coefficients_wide', 'support_patterns']:
+        table = model_card.get(table_name)
+        if table is None:
+            continue
+        path = output_dir / f'{prefix}_model_card_{table_name}.csv'
+        table.to_csv(path, index=False)
+        paths[table_name] = path
+    return paths
+
+
 def plot_top_coefficients(top_table, title='Top model coefficients', top_n=20):
     if top_table is None or len(top_table) == 0:
         raise ValueError('top_table is empty.')
