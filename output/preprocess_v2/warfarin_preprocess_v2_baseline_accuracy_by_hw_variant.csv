@@ -1,5 +1,5 @@
-baseline,height_weight_variant,accuracy
-Clinical,knn_hw,0.6407380607814761
-Pharmacogenetic,knn_hw,0.690123010130246
-Clinical,regression_hw,0.63910998552822
-Pharmacogenetic,regression_hw,0.691027496382055
+feature_set,height_weight_variant,baseline,correct_count,total_count,accuracy,fraction_incorrect
+v2_strict_knn_hw_full_dummies,knn_hw,Clinical,3542,5528,0.6407380607814761,0.3592619392185239
+v2_strict_knn_hw_full_dummies,knn_hw,Pharmacogenetic,3815,5528,0.690123010130246,0.309876989869754
+v2_strict_regression_hw_full_dummies,regression_hw,Clinical,3533,5528,0.63910998552822,0.36089001447178004
+v2_strict_regression_hw_full_dummies,regression_hw,Pharmacogenetic,3821,5528,0.6912083936324168,0.3087916063675832
